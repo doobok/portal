@@ -1,5 +1,75 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.nav {
+  position: absolute;
+  top: 15px;
+  z-index: 99;
+  left: 0;
+  right: 0;
+}
+
+.uk-sticky-placeholder {
+  height: 0 !important;
+}
+
+.top-wrap::before,
+.overlay-wrap::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top-wrap-height {
+  height: 80vh;
+  min-height: 460px;
+  -webkit-transition: height 0.25s;
+  transition: height 0.25s;
+}
+
+.uk-subnav-pill > * > :first-child {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.top-container {
+  z-index: 2;
+}
+
+.uk-logo img {
+  height: 38px;
+}
+
+.subtitle-text {
+  font-size: 1.2em;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+.logos-grid img {
+  display: block;
+  width: 60px;
+  margin: 0 auto;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: -webkit-filter 0.25s;
+  transition: -webkit-filter 0.25s;
+  transition: filter 0.25s;
+  transition: filter 0.25s, -webkit-filter 0.25s;
+}
+
+.logos-grid img:hover {
+  display: block;
+  width: 60px;
+  margin: 0 auto;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
 /*!
  * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -5944,7 +6014,7 @@ a:hover {
 
 a,
 .uk-link {
-  color: #0033ff;
+  color: #074C86;
   text-decoration: none;
   cursor: pointer;
 }
@@ -6520,7 +6590,7 @@ a.uk-link-heading:hover,
 .uk-link-heading a:hover,
 .uk-link-toggle:hover .uk-link-heading,
 .uk-link-toggle:focus .uk-link-heading {
-  color: #0033ff;
+  color: #FF4C00;
   text-decoration: none;
 }
 
@@ -7751,7 +7821,7 @@ button.uk-icon:not(:disabled) {
   outline: none;
   background-color: #fff;
   color: #666;
-  border-color: #0033ff;
+  border-color: #FF4C00;
 }
 
 /* Disabled */
@@ -8025,7 +8095,7 @@ select.uk-form-width-xsmall {
 .uk-radio:focus,
 .uk-checkbox:focus {
   outline: none;
-  border-color: #0033ff;
+  border-color: #FF4C00;
 }
 
 /*
@@ -8035,7 +8105,7 @@ select.uk-form-width-xsmall {
 .uk-radio:checked,
 .uk-checkbox:checked,
 .uk-checkbox:indeterminate {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   border-color: transparent;
 }
 
@@ -8044,7 +8114,7 @@ select.uk-form-width-xsmall {
 .uk-radio:checked:focus,
 .uk-checkbox:checked:focus,
 .uk-checkbox:indeterminate:focus {
-  background-color: #0029cc;
+  background-color: #cc3d00;
 }
 
 /*
@@ -8399,7 +8469,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-button-primary {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8408,7 +8478,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-primary:hover,
 .uk-button-primary:focus {
-  background-color: #002ee6;
+  background-color: #e64400;
   color: #fff;
 }
 
@@ -8416,7 +8486,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-primary:active,
 .uk-button-primary.uk-active {
-  background-color: #0029cc;
+  background-color: #cc3d00;
   color: #fff;
 }
 
@@ -8565,7 +8635,7 @@ select.uk-form-width-xsmall {
   line-height: 1.5;
   background: none;
   /* 2 */
-  color: #0033ff;
+  color: #074C86;
 }
 
 /* Hover + Focus */
@@ -8756,7 +8826,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-section-primary {
-  background: #0033ff;
+  background: #FF4C00;
 }
 
 /*
@@ -9595,7 +9665,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-tile-primary {
-  background: #0033ff;
+  background: #FF4C00;
 }
 
 /*
@@ -9756,7 +9826,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-card-primary {
-  background: #0033ff;
+  background: #FF4C00;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -9766,7 +9836,7 @@ select.uk-form-width-xsmall {
 }
 
 .uk-card-primary.uk-card-hover:hover {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 
@@ -10163,8 +10233,8 @@ select.uk-form-width-xsmall {
  */
 
 .uk-alert-primary {
-  background: #ccd6ff;
-  color: #0033ff;
+  background: #ffdbcc;
+  color: #FF4C00;
 }
 
 /*
@@ -10234,7 +10304,7 @@ select.uk-form-width-xsmall {
   border-radius: 500px;
   vertical-align: middle;
   /* 1 */
-  background: #0033ff;
+  background: #FF4C00;
   color: #fff;
   font-size: 0.875rem;
   /* 2 */
@@ -10264,7 +10334,7 @@ select.uk-form-width-xsmall {
 .uk-label {
   display: inline-block;
   padding: 0 10px;
-  background: #0033ff;
+  background: #FF4C00;
   line-height: 1.5;
   font-size: 0.875rem;
   color: #fff;
@@ -11654,7 +11724,7 @@ ul.uk-nav-sub {
 /* Active */
 
 .uk-subnav-pill > .uk-active > a {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   color: #fff;
 }
 
@@ -11889,7 +11959,7 @@ ul.uk-nav-sub {
 
 .uk-tab > .uk-active > a {
   color: #333;
-  border-color: #0033ff;
+  border-color: #FF4C00;
 }
 
 /* Disabled */
@@ -13673,7 +13743,7 @@ ul.uk-nav-sub {
  */
 
 .uk-notification-message-primary {
-  color: #0033ff;
+  color: #FF4C00;
 }
 
 /*
@@ -13850,17 +13920,17 @@ ul.uk-nav-sub {
  */
 
 .uk-progress::-webkit-progress-value {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .uk-progress::-moz-progress-bar {
-  background-color: #0033ff;
+  background-color: #FF4C00;
 }
 
 .uk-progress::-ms-fill {
-  background-color: #0033ff;
+  background-color: #FF4C00;
   -ms-transition: width 0.6s ease;
   transition: width 0.6s ease;
   /* 1 */
@@ -15679,7 +15749,7 @@ ul.uk-nav-sub {
 }
 
 .uk-text-primary {
-  color: #0033ff !important;
+  color: #FF4C00 !important;
 }
 
 .uk-text-secondary {
@@ -15715,12 +15785,12 @@ ul.uk-nav-sub {
   /* 2 */
   display: inline-block;
   /* 3 */
-  color: #0033ff !important;
+  color: #FF4C00 !important;
 }
 
 @supports (-webkit-background-clip: text) {
   .uk-text-background {
-    background-color: #0033ff;
+    background-color: #FF4C00;
   }
 }
 
@@ -16175,7 +16245,7 @@ iframe.uk-cover {
 }
 
 .uk-background-primary {
-  background-color: #0033ff;
+  background-color: #FF4C00;
 }
 
 .uk-background-secondary {
