@@ -8495,7 +8495,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-button-secondary {
-  background-color: #222;
+  background-color: #074C86;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8504,7 +8504,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-secondary:hover,
 .uk-button-secondary:focus {
-  background-color: #151515;
+  background-color: #063e6e;
   color: #fff;
 }
 
@@ -8512,7 +8512,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-secondary:active,
 .uk-button-secondary.uk-active {
-  background-color: #090909;
+  background-color: #043156;
   color: #fff;
 }
 
@@ -20752,7 +20752,7 @@ iframe.uk-cover {
 .uk-card-secondary > :not([class*=uk-card-media]) .uk-navbar-nav > li > a,
 .uk-overlay-primary .uk-navbar-nav > li > a,
 .uk-offcanvas-bar .uk-navbar-nav > li > a {
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 
 .uk-light .uk-navbar-nav > li:hover > a,
@@ -20788,7 +20788,7 @@ iframe.uk-cover {
 .uk-card-secondary > :not([class*=uk-card-media]) .uk-navbar-nav > li > a.uk-open,
 .uk-overlay-primary .uk-navbar-nav > li > a.uk-open,
 .uk-offcanvas-bar .uk-navbar-nav > li > a.uk-open {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
 }
 
 .uk-light .uk-navbar-nav > li > a:active,

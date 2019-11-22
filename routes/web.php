@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('temp');
+    return view('desktop/index');
 });
 
 Auth::routes();

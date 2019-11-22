@@ -1,7 +1,12 @@
-$global-link-color: #074C86;
+$alt-color: #074C86;
+
 $global-primary-background: #FF4C00;
-$global-secondary-background: #222;
-// $global-muted-background: #FF4C00;
+// $global-secondary-background: #444;
+$global-link-color: $alt-color;
+$button-secondary-background: $alt-color;
+
+$inverse-navbar-nav-item-color: #fff; // колір головного меню
+$inverse-navbar-nav-item-hover-color: #666;
 
 .nav {
 	position: absolute;
