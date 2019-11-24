@@ -91,5 +91,9 @@ return [
     'home'                   => 'На головну',
     'logout'                 => 'Вийти',
     'select_group'           => 'Оберіть групу',
+    'bread'                  => 'BREAD',
+    'none'                   => 'Відсутній',
+    'ascending'              => 'За зростанням',
+    'descending'             => 'За спаданням',
 
 ];

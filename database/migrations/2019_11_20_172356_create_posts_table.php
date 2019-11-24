@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->string('slug')->nullable();
             $table->text('teaser')->nullable();
             $table->longText('body')->nullable();
-            $table->string('tags')->nullable();
             $table->string('status');
             $table->string('image')->nullable();
             $table->text('gallery')->nullable();

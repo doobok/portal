@@ -1,5 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.nav-bg {
+  height: 80px;
+}
+
+.bg-blue {
+  background-color: #074C86;
+}
+
 .nav {
   position: absolute;
   top: 15px;
@@ -8834,7 +8842,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-section-secondary {
-  background: #222;
+  background: #444;
 }
 
 /* Overlap modifier
@@ -9673,7 +9681,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-tile-secondary {
-  background: #222;
+  background: #444;
 }
 
 /* ========================================================================
@@ -9845,7 +9853,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-card-secondary {
-  background: #222;
+  background: #444;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -9855,7 +9863,7 @@ select.uk-form-width-xsmall {
 }
 
 .uk-card-secondary.uk-card-hover:hover {
-  background-color: #222;
+  background-color: #444;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 
@@ -10156,7 +10164,7 @@ select.uk-form-width-xsmall {
 
 .uk-marker {
   padding: 5px;
-  background: #222;
+  background: #444;
   color: #fff;
   border-radius: 500px;
 }
@@ -10409,7 +10417,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-overlay-primary {
-  background: rgba(34, 34, 34, 0.8);
+  background: rgba(68, 68, 68, 0.8);
 }
 
 /* ========================================================================
@@ -13258,7 +13266,7 @@ ul.uk-nav-sub {
   box-sizing: border-box;
   width: 270px;
   padding: 20px 20px;
-  background: #222;
+  background: #444;
   /* 3 */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -15753,7 +15761,7 @@ ul.uk-nav-sub {
 }
 
 .uk-text-secondary {
-  color: #222 !important;
+  color: #444 !important;
 }
 
 .uk-text-success {
@@ -16249,7 +16257,7 @@ iframe.uk-cover {
 }
 
 .uk-background-secondary {
-  background-color: #222;
+  background-color: #444;
 }
 
 /* Size

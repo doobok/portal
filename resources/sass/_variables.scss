@@ -1,12 +1,21 @@
 $alt-color: #074C86;
 
 $global-primary-background: #FF4C00;
-// $global-secondary-background: #444;
+$global-secondary-background: #444;
 $global-link-color: $alt-color;
 $button-secondary-background: $alt-color;
 
 $inverse-navbar-nav-item-color: #fff; // колір головного меню
 $inverse-navbar-nav-item-hover-color: #666;
+
+// custom style
+.nav-bg {
+	height: 80px;
+}
+.bg-blue {
+	background-color: #074C86;
+}
+// template custom
 
 .nav {
 	position: absolute;

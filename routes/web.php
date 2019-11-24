@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{slug}', 'NewsController@article')->name('article');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
