@@ -14,43 +14,8 @@
 @endsection
 
 @section('content')
-<div class="top-wrap uk-position-relative uk-light uk-background-secondary">
-
-  <div class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height">
-
-    <!-- TOP CONTAINER -->
-    <div class="uk-container uk-flex-auto uk-flex-center top-container uk-position-relative uk-margin-medium-top" data-uk-parallax="y: 0,50; easing:0; opacity:0.2">
-      <div class="uk-width-2-3@s" data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150">
-        <h1 class="uk-margin-remove-top">{{$page->title}}</h1>
-        <p class="subtitle-text">{{$page->teaser}}</p>
-        <p class="uk-article-meta" class="uk-margin-small-bottom"><span class="uk-label"><i class="fas fa-calendar"></i> {{$page->created_at}}</span>
-          @isset($tags)
-            @foreach ($tags as $tag)
-              <a href="{{route('news', ['tag' => $tag->slug])}}" class="uk-margin-small-left">
-                <span class="uk-label"><i class="fas fa-tag"></i> {{$tag->title}}</span>
-              </a>
-            @endforeach
-          @endisset
-        </p>
-        @isset($page->gallery)
-          <a href="#gallery" class="uk-button uk-button-default" data-uk-scrollspy-class="uk-animation-fade" data-uk-scroll="duration: 500">
-            <i class="fas fa-photo-video"></i> @lang('site.gallery') <i class="fas fa-caret-down"></i>
-          </a>
-        @endisset
-
-        @isset($page->youtube)
-          <a href="#video" class="uk-button uk-button-default" data-uk-scrollspy-class="uk-animation-fade" data-uk-scroll="duration: 500">
-            <i class="fas fa-video"></i> @lang('site.video') <i class="fas fa-caret-down"></i>
-          </a>
-        @endisset
-      </div>
-    </div>
-    <!-- /TOP CONTAINER -->
-    <!-- TOP IMAGE -->
-    <img src="{{Voyager::image($page->image)}}" data-srcset="{{Voyager::image($page->image)}}" alt="" data-uk-cover data-uk-img data-uk-parallax="opacity: 1,0.1; easing:0">
-    <!-- /TOP IMAGE -->
-  </div>
-</div>
+<section class="nav-bg bg-blue">
+</section>
 
 <section class="uk-section uk-section-xsmall uk-section-muted">
   <div class="uk-container">
@@ -67,7 +32,38 @@
 
     <article class="uk-article">
 
-        <div class="">
+
+        <h1 class="uk-article-title">{{$page->title}}</h1>
+
+        <p class="uk-article-meta"><i class="fas fa-calendar"></i> @lang('site.published-at') {{$page->created_at}}
+
+        @isset($page->gallery)
+          <a href="#gallery" class="uk-margin-left" data-uk-scroll="duration: 500">
+            <i class="fas fa-photo-video"></i> @lang('site.gallery') <i class="fas fa-caret-down"></i>
+          </a>
+        @endisset
+
+        @isset($page->youtube)
+          <a href="#video" class="uk-margin-left" data-uk-scroll="duration: 500">
+            <i class="fas fa-video"></i> @lang('site.video') <i class="fas fa-caret-down"></i>
+          </a>
+        @endisset
+
+        @isset($tags)
+          @foreach ($tags as $tag)
+            <a href="{{route('news', ['tag' => $tag->slug])}}" class="uk-margin-small-left">
+              <span class="uk-label"><i class="fas fa-tag"></i> {{$tag->title}}</span>
+            </a>
+          @endforeach
+        @endisset
+
+        </p>
+
+        <p class="uk-text-lead">{{$page->teaser}}</p>
+
+        <img data-src="{{Voyager::image($page->image)}}" alt="{{$page->title}}" uk-img>
+
+        <div class="uk-section">
 
           {!!$page->body!!}
 

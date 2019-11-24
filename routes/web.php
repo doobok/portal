@@ -20,6 +20,13 @@ Auth::routes();
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
 
+// Vue routes
+Route::group(['prefix' => 'serv-data'], function () {
+  Route::get('menu', 'Vue\MainDataController@menu');
+  Route::get('news', 'Vue\MainDataController@news');
+
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
