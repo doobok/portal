@@ -17,7 +17,6 @@
 @section('content')
 
   @include('layouts.partials.main-page.first-screan')
-  {{ config('app.locale') }}
   @include('layouts.partials.main-page.content')
   @include('layouts.partials.main-page.todo')
   @include('layouts.partials.main-page.motivation')
