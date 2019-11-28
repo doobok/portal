@@ -12,7 +12,7 @@ class MainDataController extends Controller
     public function menu()
     {
 
-      $menu = DB::table('menu_items')->where('menu_id', 2)->select('id', 'title', 'icon_class', 'parent_id', 'route')->orderBy('order')->get();
+      $menu = DB::table('menu_items')->where('menu_id', 2)->select('id', 'title', 'icon_class', 'parent_id', 'url')->orderBy('order')->get();
 
       return $menu;
 
