@@ -7,12 +7,12 @@
         </div>
       </div>
       <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav uk-visible@s">
-          <li class="uk-card-hover uk-visible@m"><a href="/"><i class="fas fa-home"></i></a></li>
+        {{-- <ul class="uk-navbar-nav uk-visible@s">
+          <li class="uk-card-hover uk-visible@m"><a href="/"><i class="fas fa-home"></i></a></li> --}}
 
           {{-- <menu-main></menu-main> --}}
 
-          <li class="uk-card-hover"><a href=""><span class=""><b>Про нас</b></span></a></li>
+          {{-- <li class="uk-card-hover"><a href=""><span class=""><b>Про нас</b></span></a></li>
           <li class="uk-card-hover"><a href="{{route('news')}}"><span class=""><b>Новини</b></span></a></li>
           <li class="uk-card-hover"><a href=""><span class=""><b>Ініціативи</b></span></a></li>
           <li class="uk-card-hover">
@@ -30,8 +30,8 @@
               </ul>
             </div>
           </li>
-          <li class="uk-card-hover"><a href=""><span class=""><b>Контакти</b></span></a></li>
-          <li class="uk-card-hover">
+          <li class="uk-card-hover"><a href=""><span class=""><b>Контакти</b></span></a></li> --}}
+          {{-- <li class="uk-card-hover">
             <a href="#"><i class="fas fa-power-off"></i></a>
             <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">
               <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -40,7 +40,7 @@
               </ul>
             </div>
           </li>
-        </ul>
+        </ul> --}}
         <a class="uk-navbar-toggle uk-navbar-item uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
       </div>
     </nav>

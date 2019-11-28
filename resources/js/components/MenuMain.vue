@@ -3,7 +3,22 @@
     <li class="uk-card-hover uk-visible@m"><a href="/"><i class="fas fa-home"></i></a></li>
 
     <template v-for="item in menu">
-      <li class="uk-card-hover"><a href=""><span class=""><b>{{item.title}}</b></span></a></li>
+      <li v-if="!subMenu" @hover="subMenu(item.id)" class="uk-card-hover"><a href=""><span class=""><b>{{item.title}}</b></span></a></li>
+
+      <li v-if="subMenu" class="uk-card-hover">
+        <a href="#">
+          <span class=""><b>{{item.title}}</b>
+            <i class="fas fa-angle-down uk-margin-small-left"></i>
+          </span>
+        </a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <template v-for="itm in subMenu">
+              <li><a href="#"><i class="fas fa-receipt uk-margin-right"></i>{{itm.title}}</a></li>
+            </template>
+          </ul>
+        </div>
+      </li>
 
     </template>
 
@@ -36,7 +51,10 @@ export default{
   },
   computed: {
     menu () {
-    return  this.items.filter(i => i.parent_id == null);
+      return this.items.filter(i => i.parent_id == null);
+    },
+    subMenu (id) {
+      return this.items.filter(i => i.parent_id == id);
 
     }
   }
