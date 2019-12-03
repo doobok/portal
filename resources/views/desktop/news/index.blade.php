@@ -27,7 +27,7 @@
     </div>
   </section>
 
-  <div class="uk-section">
+  <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
 
     <div class="uk-container">
 
@@ -37,7 +37,7 @@
 
 
 
-            <news-article></news-article>
+            <news-article tag="{{request('tag')}}"></news-article>
 
 
 

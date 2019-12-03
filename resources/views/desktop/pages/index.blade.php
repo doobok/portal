@@ -9,11 +9,20 @@
 @endsection
 
 @section('content')
-  <div class="uk-background-fixed uk-background-center-center uk-height-medium uk-width-1-1" style="background-image: url({{Voyager::image($page->image)}});"></div>
+  <section class="nav-bg bg-blue">
+  </section>
+
+  <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url({{Voyager::image($page->image)}});">
+
+    {{-- <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">Headline</h1> --}}
+
+  </div>
+
+  {{-- <div class="uk-background-fixed uk-background-center-center uk-height-medium uk-width-1-1" style="background-image: url({{Voyager::image($page->image)}});"></div> --}}
   {{-- <img src="{{Voyager::image($page->image)}}" data-srcset="{{Voyager::image($page->image)}}" alt="" data-uk-cover data-uk-img data-uk-parallax="opacity: 1,0.1; easing:0"> --}}
 
 
-  <div class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height">
+  {{-- <div class="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height">
 
     <!-- TOP CONTAINER -->
     <div class="uk-container uk-flex-auto uk-flex-center top-container uk-position-relative uk-margin-medium-top" data-uk-parallax="y: 0,50; easing:0; opacity:0.2">
@@ -26,7 +35,7 @@
     <!-- /TOP CONTAINER -->
     <!-- TOP IMAGE -->
     <!-- /TOP IMAGE -->
-  </div>
+  </div> --}}
 
 <section class="uk-section uk-section-xsmall uk-section-muted">
   <div class="uk-container">

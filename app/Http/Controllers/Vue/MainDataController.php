@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Post;
+use App\Tag;
 
 class MainDataController extends Controller
 {
+    // get Menu items
     public function menu()
     {
 
@@ -18,10 +20,36 @@ class MainDataController extends Controller
 
     }
 
-    public function news()
+    public function tags()
+    {
+      $tags = Tag::all();
+      
+      return $tags;
+    }
+
+    // get News with filter
+    public function news(Request $request)
     {
 
-      $news = Post::where('status', 'PUBLISHED')->orderBy('created_at', 'desc')->limit(6)->get();
+      if ($request->tag != null) {
+        $tag = Tag::where('slug', $request->tag)->first();
+        if ($tag != null) {
+          $news = $tag->posts()->where('status', 'PUBLISHED')
+          ->orderBy('id', 'desc')
+          ->skip($request->skip)
+          ->take(4)->get();
+        } else {
+          $news = null;
+        }
+
+
+      } else {
+        $news = Post::where('status', 'PUBLISHED')
+        ->orderBy('id', 'desc')
+        ->skip($request->skip)
+        ->take(4)->get();
+      }
+
       return $news;
 
     }

@@ -20,6 +20,7 @@ Auth::routes();
 // Vue routes
 Route::group(['prefix' => 'serv-data'], function () {
   Route::get('menu', 'Vue\MainDataController@menu');
+  Route::get('tags', 'Vue\MainDataController@tags');
   Route::get('news', 'Vue\MainDataController@news');
 
 });
