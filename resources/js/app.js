@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('menu-main', require('./components/MenuMain.vue').default);
+Vue.component('menu-sidebar', require('./components/MenuSidebar.vue').default);
 Vue.component('news-tags', require('./components/NewsTags.vue').default);
 Vue.component('news-article', require('./components/NewsArticle.vue').default);
 

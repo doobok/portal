@@ -11,10 +11,14 @@ class PagesController extends Controller
     {
       $page = Page::where('slug', $slug)->first();
 
-
       return view('desktop.pages.index', [
         'page' => $page,
 
       ]);
+    }
+
+    public function contacts()
+    {
+      return view('desktop.pages.contacts');
     }
 }

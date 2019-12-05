@@ -1,4 +1,6 @@
 $alt-color: #074C86;
+$yellow-color: #ffa500;
+$green-color: #419f47;
 
 $global-primary-background: #FF4C00;
 $global-secondary-background: #444;
@@ -15,8 +17,14 @@ $inverse-navbar-nav-item-hover-color: #666;
 .bg-blue {
 	background-color: $alt-color;
 }
-// template custom
+.bg-yellow {
+	background-color: $yellow-color;
+}
+.bg-green {
+	background-color: $green-color;
+}
 
+// template custom
 .nav {
 	position: absolute;
 	top: 15px;

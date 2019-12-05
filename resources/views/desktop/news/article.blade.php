@@ -18,7 +18,7 @@
       <div class="uk-width-2-3@s" data-uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150">
         <h1 class="uk-margin-remove-top">{{$page->title}}</h1>
         <p class="subtitle-text">{{$page->teaser}}</p>
-        <p class="uk-article-meta" class="uk-margin-small-bottom"><span class="uk-label"><i class="fas fa-calendar"></i> {{$page->created_at}}</span>
+        <p class="uk-article-meta" class="uk-margin-small-bottom"><span class="uk-label"><i class="fas fa-calendar"></i> {{$created}}</span>
           @isset($tags)
             @foreach ($tags as $tag)
               <a href="{{route('news', ['tag' => $tag->slug])}}" class="uk-margin-small-left">
@@ -100,14 +100,6 @@
           </div>
         @endisset
 
-        <div class="uk-grid-small uk-child-width-auto" uk-grid>
-            <div>
-                <a class="uk-button uk-button-text" href="#">Read more</a>
-            </div>
-            <div>
-                <a class="uk-button uk-button-text" href="#">5 Comments</a>
-            </div>
-        </div>
 
     </article>
 
