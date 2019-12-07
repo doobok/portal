@@ -18,14 +18,10 @@
   <section class="nav-bg bg-blue">
   </section>
 
-  <section class="uk-section uk-section-xsmall uk-section-muted">
-    <div class="uk-container">
-      <ul class="uk-breadcrumb">
-        <li><a href="/"><i class="fas fa-home uk-margin-right"></i>@lang('site.mainpage')</a></li>
-        <li><a href="{{route('news')}}">@lang('site.news')</a></li>
-    </ul>
-    </div>
-  </section>
+  @component('components.breadcrumbs')
+    @slot('title_1') @lang('site.news') @endslot
+    @slot('route_1') {{route('news')}} @endslot
+  @endcomponent
 
   <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
 

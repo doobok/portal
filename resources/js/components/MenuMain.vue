@@ -30,8 +30,8 @@
       <a href="#"><i class="fas fa-power-off"></i></a>
       <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">
         <ul class="uk-nav uk-navbar-dropdown-nav">
-          <li><a href="#"><i class="fas fa-sign-in-alt uk-margin-right"></i>Вхід</a></li>
-          <li><a href="#"><i class="fas fa-user-plus uk-margin-right"></i>Реєстрація</a></li>
+          <li><a href="/login"><i class="fas fa-sign-in-alt uk-margin-right"></i>Вхід</a></li>
+          <li><a href="/register"><i class="fas fa-user-plus uk-margin-right"></i>Реєстрація</a></li>
         </ul>
       </div>
     </li>

@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<section class="nav-bg bg-red">
+</section>
+
+<div class="uk-section">
+<div class="uk-container uk-flex uk-flex-center">
+  <div class="uk-flex uk-flex-center uk-flex-middle">
+  <div class="uk-width-large uk-padding-large">
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,5 +70,10 @@
             </div>
         </div>
     </div>
+</div>
+
+  </div>
+  </div>
+</div>
 </div>
 @endsection

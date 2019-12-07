@@ -16,7 +16,12 @@
               </div>
               <div class="uk-width-expand">
                 <h6 class="uk-margin-remove-bottom uk-text-bold">Future in Bucha</h6>
-                <p class="uk-text-meta uk-margin-remove-top uk-text-small"><time>{{item.created_at}}</time></p>
+                <p class="uk-text-meta uk-margin-remove-top uk-text-small">
+                  <time>Опубліковано
+                    <span class="uk-text-italic">{{item.created_at.substring(0,10)}}</span> о
+                    <span class="uk-text-italic">{{item.created_at.substring(11,16)}}</span>
+                  </time>
+                </p>
               </div>
             </div>
           </div>

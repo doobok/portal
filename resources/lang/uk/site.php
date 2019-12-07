@@ -2,7 +2,28 @@
 
 return [
 
-
+    //Auth
+    'login' => 'Ввійти',
+    'login-n' => 'Вхід',
+    'logout' => 'Натисніть щоб вийти',
+    'register' => 'Реєстрація',
+    'register-on' => 'Зареєструватися',
+    'name' => 'Імʼя',
+    'you-name' => 'Ваше імʼя',
+    'email' => 'E-mail',
+    're-email' => 'Введіть E-mail',
+    'phone-num' => 'Номер телефону',
+    'contact-phones' => 'Контактні телефони',
+    'password' => 'Пароль',
+    're-password' => 'Введіть новий пароль',
+    'password-confirm' => 'Підтвердіть пароль',
+    'remember-me' => 'Запамʼятати мене',
+    'password-forgot' => 'Забули пароль?',
+    'remind-pass' => 'Відновити пароль',
+    'reset-pass' => 'Скинути пароль',
+    'reset-pass-n' => 'Скидання пароля',
+    'entermail-to-send-reset' => 'Введіть e-mail вказаний вами при реєстрації',
+    //Main
     'read-more' => 'Читайте далі',
     'published-at' => 'Опубліковано',
     'gallery' => 'Фотогалерея',
@@ -19,7 +40,8 @@ return [
     'from' => 'з',
     'to' => 'до',
     'no-days-off' => 'без перерви, без вихідних',
-    '' => '',
+    //Titles
+    'user-profile' => 'Профіль користувача',
     '' => '',
     '' => '',
     '' => '',

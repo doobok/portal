@@ -4,27 +4,21 @@
   @component('components.meta')
 
     @slot('title') @lang('site.contacts') @endslot
-
-    @slot('description') Опис  @endslot
-    @slot('image') img  @endslot
-
+    @slot('description') @endslot
+    @slot('image')  @endslot
     @slot('date')  @endslot
 
   @endcomponent
 @endsection
 
 @section('content')
-  <section class="nav-bg bg-yellow">
-  </section>
+<section class="nav-bg bg-yellow">
+</section>
 
-  <section class="uk-section uk-section-xsmall uk-section-muted">
-    <div class="uk-container">
-      <ul class="uk-breadcrumb">
-        <li><a href="/"><i class="fas fa-home uk-margin-right"></i>@lang('site.mainpage')</a></li>
-        <li><a href="{{route('news')}}">@lang('site.news')</a></li>
-    </ul>
-    </div>
-  </section>
+@component('components.breadcrumbs')
+  @slot('title_1') @lang('site.contacts') @endslot
+  @slot('route_1') @endslot
+@endcomponent
 
   <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
     <div class="uk-container">

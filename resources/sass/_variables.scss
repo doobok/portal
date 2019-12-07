@@ -1,11 +1,13 @@
-$alt-color: #074C86;
+$blue-color: #074C86;
 $yellow-color: #ffa500;
 $green-color: #419f47;
+$red-color: #FF4C00;
 
-$global-primary-background: #FF4C00;
+$global-primary-background: $red-color;
 $global-secondary-background: #444;
-$global-link-color: $alt-color;
-$button-secondary-background: $alt-color;
+$global-link-color: $red-color;
+$global-link-hover-color: #333;
+$button-secondary-background: $blue-color;
 
 $inverse-navbar-nav-item-color: #fff; // колір головного меню
 $inverse-navbar-nav-item-hover-color: #666;
@@ -15,13 +17,16 @@ $inverse-navbar-nav-item-hover-color: #666;
 	height: 80px;
 }
 .bg-blue {
-	background-color: $alt-color;
+	background-color: $blue-color;
 }
 .bg-yellow {
 	background-color: $yellow-color;
 }
 .bg-green {
 	background-color: $green-color;
+}
+.bg-red {
+	background-color: $red-color;
 }
 
 // template custom
