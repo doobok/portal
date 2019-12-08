@@ -4,9 +4,9 @@
 
     <template v-for="item in menu">
        <template v-if="item.children">
-         <li class="uk-card-hover">
+         <li class="uk-card-hover" :key="item.id">
            <a href="#">
-             <span class=""><b>{{item.title}}</b>
+             <span class="">{{item.title}}
                <i class="fas fa-angle-down uk-margin-small-left"></i>
              </span>
            </a>
@@ -22,25 +22,28 @@
          </li>
         </template>
         <template v-else>
-          <li class="uk-card-hover"><a v-bind:href="'/' + item.url"><span class=""><b>{{item.title}}</b></span></a></li>
+          <li class="uk-card-hover" :key="item.id"><a v-bind:href="'/' + item.url">{{item.title}}</a></li>
         </template>
     </template>
 
-    <li class="uk-card-hover">
-      <a href="#"><i class="fas fa-power-off"></i></a>
-      <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">
-        <ul class="uk-nav uk-navbar-dropdown-nav">
-          <li><a href="/login"><i class="fas fa-sign-in-alt uk-margin-right"></i>Вхід</a></li>
-          <li><a href="/register"><i class="fas fa-user-plus uk-margin-right"></i>Реєстрація</a></li>
-        </ul>
-      </div>
-    </li>
+      <li class="uk-card-hover">
+        <a href="#">
+          <i v-if="!user" class="fas fa-user"></i>
+          <i v-if="user" class="fas fa-user-shield"></i>
+        </a>
+        <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">
+
+          <menu-user-nav :user="user"></menu-user-nav>
+
+        </div>
+      </li>
 
   </ul>
 </template>
 
 <script>
 export default{
+  props:['user'],
   data(){
       return{
           items: []
@@ -60,10 +63,10 @@ export default{
         let elm = arr.filter(e => e.parent_id === item.id);
 
         if (elm.length === 0 && item.parent_id === null) {
-          console.log('is not parent');
+          // console.log('is not parent');
           selected.push(item);
         } else if (item.parent_id === null) {
-          console.log('is parent with childs');
+          // console.log('is parent with childs');
           selected.push({
             title: item.title,
             children: elm

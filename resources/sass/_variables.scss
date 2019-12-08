@@ -16,6 +16,10 @@ $inverse-navbar-nav-item-hover-color: #666;
 .nav-bg {
 	height: 80px;
 }
+.nav-item:hover {
+	background-color: #fff;
+	color: #333;
+}
 .bg-blue {
 	background-color: $blue-color;
 }

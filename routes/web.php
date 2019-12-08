@@ -36,5 +36,6 @@ Route::group(['prefix' => 'admin'], function () {
 // Main routes
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
+Route::get('/initiatives', 'InitiativesController@index')->name('initiatives');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/{slug}', 'PagesController@index')->name('page');

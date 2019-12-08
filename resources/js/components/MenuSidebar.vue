@@ -4,7 +4,7 @@
 
     <template v-for="item in menu">
        <template v-if="item.children">
-         <li class="uk-parent uk-active">
+         <li class="uk-parent uk-active" :key="item.id">
            <a href="#">
              <span class="uk-active">{{item.title}}
                <i class="fas fa-angle-down uk-margin-small-left"></i>
@@ -20,15 +20,19 @@
          </li>
         </template>
         <template v-else>
-          <li class="uk-active"><a v-bind:href="'/' + item.url">{{item.title}}</a></li>
+          <li class="uk-active" :key="item.id"><a v-bind:href="'/' + item.url">{{item.title}}</a></li>
         </template>
     </template>
+    <li class="uk-nav-divider uk-margin"></li>
+
+    <menu-user-nav :user="user"></menu-user-nav>
 
   </ul>
 </template>
 
 <script>
 export default{
+  props:['user'],
   data(){
       return{
           items: []
@@ -48,10 +52,10 @@ export default{
         let elm = arr.filter(e => e.parent_id === item.id);
 
         if (elm.length === 0 && item.parent_id === null) {
-          console.log('is not parent');
+          // console.log('is not parent');
           selected.push(item);
         } else if (item.parent_id === null) {
-          console.log('is parent with childs');
+          // console.log('is parent with childs');
           selected.push({
             title: item.title,
             children: elm

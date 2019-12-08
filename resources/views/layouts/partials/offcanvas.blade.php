@@ -2,22 +2,7 @@
   <div class="uk-offcanvas-bar uk-flex uk-flex-column uk-offcanvas-bar-animation uk-offcanvas-slide">
     <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
 
-    <menu-sidebar></menu-sidebar>
+    <menu-sidebar user="{{auth()->user()}}"></menu-sidebar>
 
-    {{-- <ul class="uk-nav uk-nav-default">
-      <li class="uk-active"><a href="#">Active</a></li>
-      <li class="uk-parent">
-        <a href="#">Parent</a>
-        <ul class="uk-nav-sub">
-          <li><a href="#">Sub item</a></li>
-          <li><a href="#">Sub item</a></li>
-        </ul>
-      </li>
-      <li class="uk-nav-header">Header</li>
-      <li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
-      <li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
-      <li class="uk-nav-divider"></li>
-      <li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li>
-    </ul> --}}
   </div>
 </div>

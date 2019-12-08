@@ -8,7 +8,7 @@
       </div>
       <div class="uk-navbar-right">
 
-          <menu-main></menu-main>
+          <menu-main user="{{auth()->user()}}"></menu-main>
 
         <a class="uk-navbar-toggle uk-navbar-item uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
       </div>
