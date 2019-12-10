@@ -7,6 +7,7 @@ Vue.component('menu-sidebar', require('./components/MenuSidebar.vue').default);
 Vue.component('menu-user-nav', require('./components/MenuUserNav.vue').default);
 Vue.component('news-tags', require('./components/NewsTags.vue').default);
 Vue.component('news-article', require('./components/NewsArticle.vue').default);
+Vue.component('initiative-add', require('./components/InitiativesAddForm.vue').default);
 
 
 const app = new Vue({

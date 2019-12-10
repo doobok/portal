@@ -22,6 +22,7 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::get('menu', 'Vue\MainDataController@menu');
   Route::get('tags', 'Vue\MainDataController@tags');
   Route::get('news', 'Vue\MainDataController@news');
+  Route::post('initiative-add', 'InitiativesController@addForm');
 
 });
 
@@ -37,5 +38,6 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
 Route::get('/initiatives', 'InitiativesController@index')->name('initiatives');
+Route::get('/initiatives/add', 'InitiativesController@add')->name('initiative-add');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/{slug}', 'PagesController@index')->name('page');

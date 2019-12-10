@@ -23,8 +23,8 @@ class CreateInitiativesTable extends Migration
             $table->integer('vac_num')->nullable();
             $table->integer('vac_res')->nullable();
             $table->bigInteger('user_id');
-            $table->date('date_regfinish');
-            $table->date('date_start');
+            $table->dateTime('date_regfinish')->nullable();
+            $table->dateTime('date_start');
             $table->timestamps();
         });
     }
