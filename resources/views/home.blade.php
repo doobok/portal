@@ -25,6 +25,24 @@
 
   <h1 class="uk-heading-divider uk-h3">@lang('site.user-profile')</h1>
 
+@if (session('resent'))
+    <div class="uk-alert-success" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+        На вашу адресу електронної пошти було відправлено нове посилання для підтвердження.
+    </div>
+@endif
+@if (!auth()->user()->email_verified_at)
+  <form class="uk-padding-remove" method="POST" action="{{ route('verification.resend') }}">
+    @csrf
+    <div class="uk-alert-danger" uk-alert>
+      <p class="uk-text-small">Вітаємо <b>{{auth()->user()->name}}</b>! Для завершення реєстрації Вам необхідно підтвердити вашу електронну адресу:<b>{{auth()->user()->email}}</b>.
+      <br>Ми вже відправили Вам лист з інструкціями, якщо з яких небудь причин Ви його не отримали натисніть:
+      <button class="uk-button uk-button-text"><i class="fas fa-envelope-square"></i> відправити повторно</button>
+      <br><b>Не підтверджені аккаунти будуть автоматично видалені!</b></p>
+    </div>
+  </form>
+@endif
+
   <div class="uk-card uk-card-default uk-width-1-1">
       <div class="uk-card-header">
           <div class="uk-grid-small uk-flex-middle" uk-grid>

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('desktop/index');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Vue routes
 Route::group(['prefix' => 'serv-data'], function () {
