@@ -1,7 +1,13 @@
+// main palette
 $blue-color: #074C86;
 $yellow-color: #ffa500;
 $green-color: #419f47;
 $red-color: #FF4C00;
+// pastel palette
+$blue-pastel: #838FBA;
+$yellow-pastel: #F6BAA5;
+$green-pastel: #8ACF8F;
+$red-pastel: #E89CAC;
 
 $global-primary-background: $red-color;
 $global-secondary-background: #444;
@@ -11,6 +17,15 @@ $button-secondary-background: $blue-color;
 
 $inverse-navbar-nav-item-color: #fff; // колір головного меню
 $inverse-navbar-nav-item-hover-color: #666;
+
+$alert-primary-background: $blue-pastel;
+$alert-primary-color: #fff;
+$alert-success-background: $green-pastel;
+$alert-success-color: #fff;
+$alert-warning-background: $yellow-pastel;
+$alert-warning-color: #fff;
+$alert-danger-background: $red-pastel;
+$alert-danger-color: #fff;
 
 // custom style
 .nav-bg {

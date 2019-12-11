@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.11.2",
-        "uikit": "^3.2.3"
+        "uikit": "^3.2.3",
+        "vuelidate": "^0.7.4"
     }
 }

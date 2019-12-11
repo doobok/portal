@@ -1,7 +1,13 @@
 require('./bootstrap');
 
+// Vue
 window.Vue = require('vue');
 
+// Vuelidate
+import Vuelidate from 'vuelidate';
+Vue.use(Vuelidate);
+
+// Components
 Vue.component('menu-main', require('./components/MenuMain.vue').default);
 Vue.component('menu-sidebar', require('./components/MenuSidebar.vue').default);
 Vue.component('menu-user-nav', require('./components/MenuUserNav.vue').default);

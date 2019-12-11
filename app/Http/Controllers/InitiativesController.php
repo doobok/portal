@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\InitiativeFormRules;
 use App\Initiative;
 
 class InitiativesController extends Controller
@@ -17,11 +18,8 @@ class InitiativesController extends Controller
       return view('desktop.initiatives.add');
     }
 
-    public function addForm(Request $request)
+    public function addForm(InitiativeFormRules $request)
     {
-      $this->validate($request, [
-          'title' => 'required',
-      ]);
 
       // save to DB
       $event = new Initiative;

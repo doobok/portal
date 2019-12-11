@@ -28,12 +28,17 @@
 
     <div class="uk-container">
 
+      @include('layouts.partials.auth-info')
 
           <h1 class="uk-heading-divider">@lang('site.add-initiative') <i class="fas fa-users uk-text-muted"></i></h1>
           <p class="uk-heading-bullet  uk-text-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+          {{-- @auth () --}}
+            <initiative-add user="{{auth()->user()}}"></initiative-add>
+          {{-- @else
+            <h2>Спочатку авторизуйтесь</h2>
+          @endauth --}}
 
-            <initiative-add user_id="{{auth()->user()->id}}"></initiative-add>
 
 
     </div>
