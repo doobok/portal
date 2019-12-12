@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // My Providers
+        // Image upload
+        QCod\ImageUp\ImageUpServiceProvider::class
 
     ],
 

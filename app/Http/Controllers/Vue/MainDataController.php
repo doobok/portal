@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Tag;
+use App\Initiative;
 
 class MainDataController extends Controller
 {
@@ -23,7 +24,7 @@ class MainDataController extends Controller
     public function tags()
     {
       $tags = Tag::all();
-      
+
       return $tags;
     }
 
@@ -42,7 +43,6 @@ class MainDataController extends Controller
           $news = null;
         }
 
-
       } else {
         $news = Post::where('status', 'PUBLISHED')
         ->orderBy('id', 'desc')
@@ -51,6 +51,18 @@ class MainDataController extends Controller
       }
 
       return $news;
+
+    }
+
+    // get Initiatives
+    public function initiatives(Request $request)
+    {
+        $initiatives = Initiative::where('status', 'new')
+        ->orderBy('date_start', 'desc')
+        ->skip($request->skip)
+        ->take(3)->get();
+
+      return $initiatives;
 
     }
 }

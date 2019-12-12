@@ -25,6 +25,7 @@ class InitiativeFormRules extends FormRequest
     {
         return [
           'user_id' => 'required',
+          'image' => 'required|file|max:5000',
           'date_start' => 'required|date|after:tomorrow',
           'date_regfinish' => 'sometimes|required|date|after:tomorrow|before:date_start',
         ];
@@ -33,6 +34,8 @@ class InitiativeFormRules extends FormRequest
     public function messages()
     {
         return [
+          'image.file' => 'Оберіть дійсний файл зображення',
+          'image.max' => 'Зображення занадто велике для завантаження, оберіть зображення розміром до 5Mb',
           'user_id.required' => 'Заявку можуть подавати виключно зареєстровані користувачі',
           'date_start.after' => 'Час початку не може бути визначений раніше, як через добу з моменту подачі заявки',
           'date_regfinish.required' => 'При потребі вкажіть час завершення реєстрації',

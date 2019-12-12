@@ -26,6 +26,7 @@ class InitiativesController extends Controller
       $event->title = $request->title;
       $event->teaser = $request->teaser;
       $event->body = $request->body;
+      $event->image = $request->image;
       $event->status = 'new';
       $event->vac_num = $request->vac_num;
       $event->vac_res = $request->vac_res;
