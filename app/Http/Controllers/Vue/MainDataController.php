@@ -58,7 +58,7 @@ class MainDataController extends Controller
     public function initiatives(Request $request)
     {
         $initiatives = Initiative::where('status', 'new')
-        ->orderBy('date_start', 'desc')
+        ->orderBy('date_start', 'asc')
         ->skip($request->skip)
         ->take(3)->get();
 
