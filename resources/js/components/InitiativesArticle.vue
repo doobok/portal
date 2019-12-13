@@ -6,6 +6,16 @@
         <div class="uk-cover-container"
         v-bind:class="{ 'uk-flex-last@s uk-card-media-right': multipleIndex(index), 'uk-card-media-left': !multipleIndex(index) }">
             <img :src="'/storage/' + item.image" uk-cover>
+            <div class="uk-position-cover uk-flex uk-flex-top"
+            v-bind:class="{ 'uk-flex-left': multipleIndex(index), 'uk-flex-right@s': !multipleIndex(index) }">
+              <div v-html="eventStatus(item)" id="status"></div>
+            </div>
+
+            <div class="uk-position-cover uk-flex uk-flex-bottom">
+              <span class="uk-heading-small uk-margin-remove uk-tile-secondary uk-text-center uk-width-1-1" style="opacity: 0.7"><i class="far fa-calendar-check uk-margin-small-right"></i> {{item.date_start.substring(0,10)}} </span>
+            </div>
+
+
             <!-- <img src="/dum.jpg" alt="" uk-cover> -->
             <canvas width="600" height="400"></canvas>
         </div>
@@ -17,12 +27,12 @@
                     <i class="fas fa-exclamation-triangle uk-text-warning uk-margin-small-right"></i>
                     Кількість учасників обмежена, доступних місць: <b>{{item.vac_num - item.vac_res}}</b><br>
                   </span>
-                  <i class="far fa-clock uk-margin-small-right"></i> Початок: <b>{{item.date_start.substring(0,16)}}</b>
+                  <i class="far fa-clock uk-margin-small-right"></i> Початок: <b>{{item.date_start.substring(11,16)}}</b>
 
                 </span>
                 <hr>
                 <p>{{item.teaser}}</p>
-                <a class="uk-button uk-button-default uk-margin-remove uk-width-1-1" :href="'/initiatives/' + item.id">Ознайомитися з подробицями...</a>                
+                <a class="uk-button uk-button-default uk-margin-remove uk-width-1-1" :href="'/initiatives/' + item.id">Ознайомитися з подробицями...</a>
             </div>
             <!-- <div class="bg-green uk-light"> -->
             <!-- </div> -->
@@ -49,9 +59,12 @@ export default{
           loading: false,
           count: 0,
           lastdata: false,
+          nowtime: '',
+          oldperiod: '',
       }
   },
   mounted: function () {
+    this.getNowTime();
     this.loadData();
     document.addEventListener('scroll', e => {
                 var scrollHeight = Math.max(
@@ -66,21 +79,33 @@ export default{
             });
   },
   methods: {
+    getNowTime() {
+      axios
+          .get('/serv-data/now-time')
+          .then(response => {
+              this.nowtime = response.data;
+          });
+    },
     loadData() {
                 this.loading = true;
                 setTimeout(e => {
                     axios
-                        .get('/serv-data/initiatives', { params: { skip: this.count } })
+                        .get('/serv-data/initiatives', { params: { skip: this.count, period: this.oldperiod } })
                         .then(response => {
                             if (response.data.length != 0) {
                                 this.events = [].concat(this.events, response.data);
-                                if (response.data.length < 3) {
+                                if (response.data.length < 4 && this.oldperiod) {
                                   this.lastdata = true;
                                 }
                             } else {
+                              if (this.oldperiod) {
                                 this.lastdata = true;
+                              } else {
+                                this.count = -4;
+                                this.oldperiod = true;
+                              }
                             }
-                            this.count = this.count+3;
+                            this.count = this.count+4;
                             this.loading = false;
                         });
 
@@ -94,6 +119,15 @@ export default{
         } else {
           return false;
         }
+      },
+      eventStatus(e) {
+        let status
+        if (e.date_start < this.nowtime) {
+          status = '<span class="uk-label uk-label-danger">Завершена</span>'
+        } else {
+          status = '<span class="uk-label uk-label-success">Активна</span>'
+        }
+        return status;
       }
   },
   computed: {

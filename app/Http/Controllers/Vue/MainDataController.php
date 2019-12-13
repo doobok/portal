@@ -57,12 +57,27 @@ class MainDataController extends Controller
     // get Initiatives
     public function initiatives(Request $request)
     {
+        $now = \Carbon\Carbon::now();
+
+        $params = [];
+          if ($request->period) {
+            array_push($params, ['date_start', '<=', $now]);
+          } else {
+          array_push($params, ['date_start', '>', $now]);
+          }
+
         $initiatives = Initiative::where('status', 'new')
+        ->where($params)
         ->orderBy('date_start', 'asc')
         ->skip($request->skip)
-        ->take(3)->get();
+        ->take(4)->get();
 
       return $initiatives;
 
+    }
+
+    public function now()
+    {
+      return \Carbon\Carbon::now()->toDateTimeString();
     }
 }
