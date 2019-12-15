@@ -5,6 +5,7 @@
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
         <div class="uk-cover-container"
         v-bind:class="{ 'uk-flex-last@s uk-card-media-right': multipleIndex(index), 'uk-card-media-left': !multipleIndex(index) }">
+          <a class="uk-link-reset" :href="'/initiatives/' + item.id">
             <img :src="'/storage/' + item.image" uk-cover>
             <div class="uk-position-cover uk-flex uk-flex-top"
             v-bind:class="{ 'uk-flex-left': multipleIndex(index), 'uk-flex-right@s': !multipleIndex(index) }">
@@ -14,6 +15,7 @@
             <div class="uk-position-cover uk-flex uk-flex-bottom">
               <span class="uk-heading-small uk-margin-remove uk-tile-secondary uk-text-center uk-width-1-1" style="opacity: 0.7"><i class="far fa-calendar-check uk-margin-small-right"></i> {{item.date_start.substring(0,10)}} </span>
             </div>
+          </a>
 
 
             <!-- <img src="/dum.jpg" alt="" uk-cover> -->

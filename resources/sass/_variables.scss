@@ -47,6 +47,9 @@ $alert-danger-color: #fff;
 .bg-red {
 	background-color: $red-color;
 }
+.transparent-dark {
+	background: rgba(130, 130, 130, 0.4);
+}
 
 // template custom
 .nav {

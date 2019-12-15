@@ -23,6 +23,29 @@
     @slot('route_1')  @endslot
   @endcomponent
 
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true;">
+
+    <ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
+      @foreach ($articles as $article)
+        <li class="uk-width-1-1">
+            <div class="uk-cover-container">
+                <img src="{{Voyager::image($article->image)}}" alt="" uk-cover>
+                <div class="uk-text-center uk-position-medium uk-position-cover uk-overlay transparent-dark uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+                  <h4 class="uk-heading-small uk-margin-small-bottom">{{$article->title}}</h4>
+                  <h5 class="uk-visible@m uk-width-3-4 uk-margin-remove-top">{{$article->teaser}}</h5>
+                  <a class="uk-button uk-button-default uk-button-large" href="{{route('initiative', $article->id)}}">@lang('site.read-more')</a>
+                </div>
+                {{-- <div class="uk-position-medium uk-position-cover uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">Overlay</div> --}}
+            </div>
+        </li>
+      @endforeach
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+
   <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
 
     <div class="uk-container">
@@ -37,7 +60,7 @@
           </div>
 
           <initiative-article></initiative-article>
-          
+
 
     </div>
 
