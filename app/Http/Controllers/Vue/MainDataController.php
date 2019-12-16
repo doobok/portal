@@ -66,7 +66,7 @@ class MainDataController extends Controller
           array_push($params, ['date_start', '>', $now]);
           }
 
-        $initiatives = Initiative::where('status', 'new')
+        $initiatives = Initiative::where('status', 'published')
         ->where($params)
         ->orderBy('date_start', 'asc')
         ->skip($request->skip)

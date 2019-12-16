@@ -55,7 +55,7 @@
   @slot('title_2') {{$page->title}} @endslot
 @endcomponent
 
-<section class="uk-section">
+<section class="uk-section-small">
 
   <div class="uk-container">
     <article class="uk-article">
@@ -64,9 +64,78 @@
 
     </article>
 
-    <div class="uk-card uk-card-default uk-margin-large-top uk-width-1-1">
+    {{-- @if($countdown AND $countdown != 1) --}}
+      <div class="uk-text-center uk-margin-top">
+            <button class="uk-button uk-button-default uk-alert-success uk-button-large" type="button"><i class="fas fa-puzzle-piece uk-margin-small-right"></i>Долучитися до ініціативи</button>
+      </div>
+    {{-- @endif --}}
+
+
+
+    @can('update', $page)
+    <div class="uk-card uk-card-default uk-margin-bottom uk-width-1-1 uk-margin-top">
         <div class="uk-card-header">
-          <p class="uk-text-meta">Інформація про автора ініціативи</p>
+          <p class="uk-text-meta"><i class="fas fa-users uk-margin-small-right"></i>Зареєстровані / ліміт: <b>{{$page->vac_res . ' / ' . $page->vac_num}}</b></p>
+          @isset($page->vac_num)
+            <progress class="uk-progress" value="{{$page->vac_res}}" max="{{$page->vac_num}}"></progress>
+          @endisset
+        </div>
+        <div class="uk-card-body uk-overflow-auto">
+          <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
+            <tbody>
+                <tr>
+                    <td>User_name</td>
+                    <td>weuwue@mail.ua</td>
+                    <td>+38034839483</td>
+                    <td class="uk-table-shrink">
+                        <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User_name</td>
+                    <td>weuwue@mail.ua</td>
+                    <td>+38034839483</td>
+                    <td>
+
+                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User_name</td>
+                    <td>weuwue@mail.ua</td>
+                    <td>+38034839483</td>
+                    <td>
+
+                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User_name</td>
+                    <td>weuwue@mail.ua</td>
+                    <td>+38034839483</td>
+                    <td>
+
+                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User_name</td>
+                    <td>weuwue@mail.ua</td>
+                    <td>+38034839483</td>
+                    <td>
+
+                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    @endcan
+
+    <div class="uk-card uk-card-default uk-width-1-1">
+        <div class="uk-card-header">
+          <p class="uk-text-meta"><i class="fas fa-info uk-margin-small-right"></i>Інформація про автора ініціативи</p>
         </div>
         <div class="uk-card-body">
           <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -80,6 +149,12 @@
           </div>
         </div>
     </div>
+
+    @can('moderate', $page)
+
+      <initiative-article-moder :id="{{$page->id}}" status="{{$page->status}}"></initiative-article-moder>
+
+    @endcan
 
   </div>
 

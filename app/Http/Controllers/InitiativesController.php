@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\InitiativeFormRules;
 use Carbon\Carbon;
 use App\Initiative;
+use Illuminate\Support\Facades\Auth;
 
 class InitiativesController extends Controller
 {
@@ -19,7 +20,15 @@ class InitiativesController extends Controller
 
     public function article($id)
     {
-      $article = Initiative::findOrFail($id);
+      // get initiative
+      if (Auth::check()) {
+        $article = Initiative::findOrFail($id);
+        // check permissions
+        $this->authorize('view', $article);
+      } else {
+        $article = Initiative::where('status', 'published')->findOrFail($id);
+      }
+
 
       // get date
       $date = Carbon::createFromDate($article->date_start);
@@ -75,5 +84,15 @@ class InitiativesController extends Controller
       $event->save();
 
       return response()->json(null, 201);
+    }
+
+    public function update(Request $request, $id)
+    {
+      $initiative = Initiative::findOrFail($id);
+      $initiative->fill($request->all());
+      $initiative->save();
+
+      return response()->json(null, 202);
+
     }
 }

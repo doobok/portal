@@ -26,7 +26,8 @@ export default{
         axios.post('/logout')
             .then(response => {
               this.results = response.data;
-              this.user = ''
+              this.user = '';
+              location.reload();
             })
             .catch(error => console.log(error));
     },

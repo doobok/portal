@@ -9,6 +9,8 @@ class Initiative extends Model
 {
   use HasImageUploads;
 
+  protected $fillable = ['status'];
+
   protected static $imageFields = [
         'image' => [
             // width to resize image after upload
