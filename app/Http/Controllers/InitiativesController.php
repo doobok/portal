@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\InitiativeFormRules;
 use Carbon\Carbon;
 use App\Initiative;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class InitiativesController extends Controller
@@ -28,7 +29,6 @@ class InitiativesController extends Controller
       } else {
         $article = Initiative::where('status', 'published')->findOrFail($id);
       }
-
 
       // get date
       $date = Carbon::createFromDate($article->date_start);
@@ -54,6 +54,7 @@ class InitiativesController extends Controller
         'date' => $date,
         'countdown' => $countdown,
         'author' => $article->user,
+        'subscribers' => $article->users,
 
       ]);
 
@@ -86,6 +87,67 @@ class InitiativesController extends Controller
       return response()->json(null, 201);
     }
 
+    public function subscribe(Request $request)
+    {
+      // get initiative
+      $initiative = Initiative::findOrFail($request->id);
+      // check availability
+      if ($initiative->vac_num <= $initiative->vac_res) {
+        return response()->json('Невдача! Ініціатива вже заповнена');
+      }
+      // check subscribe
+      if (Auth::user()->events()->where('id', $request->id)->first()) {
+        return response()->json('Ви вже долучилися до цієї ініціативи');
+      }
+
+      // attach subscriber to initiative
+      $user = Auth::user()->events()->save($initiative);
+
+      // change count of subscribers
+      $initiative->vac_res++;
+      $initiative->save();
+
+      return response()->json('Ви успішно долучились до ініціативи');
+    }
+
+    public function unsubscribe(Request $request)
+    {
+      // find user
+      if ($request->user_id) {
+        $user = User::find($request->user_id);
+      } else {
+        $user = Auth::user();
+      }
+
+      // detach subscriber from initiative
+      $user->events()->detach($request->id);
+
+      // change count of subscribers
+      $initiative = Initiative::findOrFail($request->id);
+      $initiative->vac_res--;
+      $initiative->save();
+
+      return response()->json('Відписка успішна');
+    }
+
+    // get subscribe status
+    public function status(Request $request)
+    {
+      $initiative = Initiative::findOrFail($request->id);
+      // check subscribe
+      if (Auth::user()->events()->where('id', $request->id)->first()) {
+        return response()->json('Ви вже долучилися', 202);
+      }
+      // check availability
+      if ($initiative->vac_num) {
+        if ($initiative->vac_num <= $initiative->vac_res) {
+          return response()->json('Ініціатива заповнена');
+        }
+      }
+      // return succes
+      return response()->json(null, 201);
+    }
+
     public function update(Request $request, $id)
     {
       $initiative = Initiative::findOrFail($id);
@@ -93,6 +155,5 @@ class InitiativesController extends Controller
       $initiative->save();
 
       return response()->json(null, 202);
-
     }
 }

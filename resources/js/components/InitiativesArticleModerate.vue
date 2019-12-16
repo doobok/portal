@@ -22,9 +22,6 @@ export default{
           confirmed: false,
       }
   },
-  mounted: function () {
-
-  },
   methods: {
     setStatus(s) {
         confirm('Ви дійсно бажаєте змінити статус на ' + s)
@@ -37,10 +34,7 @@ export default{
             console.log(e.response.data);
           });
       },
-
   },
-  computed: {
 
-  }
 }
 </script>

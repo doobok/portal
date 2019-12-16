@@ -27,9 +27,14 @@ class Initiative extends Model
 
         ],
     ];
-
+    // author
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+    // registered users
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'initiative_user');
     }
 }

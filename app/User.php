@@ -36,9 +36,14 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    // user publications
     public function initiatives()
     {
         return $this->hasMany('App\Initiative');
+    }
+    // sibscribed initiatives
+    public function events()
+    {
+        return $this->belongsToMany('App\Initiative', 'initiative_user');
     }
 }

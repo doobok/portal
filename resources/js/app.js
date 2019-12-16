@@ -14,6 +14,7 @@ Vue.component('menu-user-nav', require('./components/MenuUserNav.vue').default);
 Vue.component('news-tags', require('./components/NewsTags.vue').default);
 Vue.component('news-article', require('./components/NewsArticle.vue').default);
 Vue.component('initiative-article', require('./components/InitiativesArticle.vue').default);
+Vue.component('initiative-article-subscribe', require('./components/InitiativesArticleSubscribe.vue').default);
 Vue.component('initiative-article-moder', require('./components/InitiativesArticleModerate.vue').default);
 Vue.component('initiative-add', require('./components/InitiativesAddForm.vue').default);
 

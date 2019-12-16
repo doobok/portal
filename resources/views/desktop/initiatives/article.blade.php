@@ -65,9 +65,7 @@
     </article>
 
     {{-- @if($countdown AND $countdown != 1) --}}
-      <div class="uk-text-center uk-margin-top">
-            <button class="uk-button uk-button-default uk-alert-success uk-button-large" type="button"><i class="fas fa-puzzle-piece uk-margin-small-right"></i>Долучитися до ініціативи</button>
-      </div>
+    <initiative-article-subscribe :item="{{$page}}"></initiative-article-subscribe>
     {{-- @endif --}}
 
 
@@ -80,56 +78,28 @@
             <progress class="uk-progress" value="{{$page->vac_res}}" max="{{$page->vac_num}}"></progress>
           @endisset
         </div>
-        <div class="uk-card-body uk-overflow-auto">
-          <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
-            <tbody>
-                <tr>
-                    <td>User_name</td>
-                    <td>weuwue@mail.ua</td>
-                    <td>+38034839483</td>
-                    <td class="uk-table-shrink">
-                        <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>User_name</td>
-                    <td>weuwue@mail.ua</td>
-                    <td>+38034839483</td>
-                    <td>
+        @if (count($subscribers) > 0)
+          <div class="uk-card-body uk-overflow-auto">
+            <table class="uk-table uk-table-striped uk-table-small uk-table-hover">
+              <tbody>
+                @foreach ($subscribers as $subscriber)
+                  <tr>
+                      <td>{{$subscriber->name}}</td>
+                      <td>{{substr($subscriber->email, 0, 3)}}***{{stristr($subscriber->email, '@')}}</td>
+                      <td>+38034839483</td>
+                      <td class="uk-table-shrink">
+                          <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
+                      </td>
+                  </tr>
+                @endforeach
 
-                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>User_name</td>
-                    <td>weuwue@mail.ua</td>
-                    <td>+38034839483</td>
-                    <td>
 
-                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>User_name</td>
-                    <td>weuwue@mail.ua</td>
-                    <td>+38034839483</td>
-                    <td>
+              </tbody>
+            </table>
+          </div>
 
-                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>User_name</td>
-                    <td>weuwue@mail.ua</td>
-                    <td>+38034839483</td>
-                    <td>
+        @endif
 
-                      <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                    </td>
-                </tr>
-            </tbody>
-          </table>
-        </div>
     </div>
     @endcan
 
