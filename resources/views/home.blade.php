@@ -56,8 +56,9 @@
           </div>
       </div>
       <div class="uk-card-body">
+        {{-- created snitiatives --}}
         @if(count($initiatives) > 0)
-            <h4 class="uk-card-title"><i class="fas fa-lightbulb uk-margin-small-right uk-text-success"></i>Актуальні ініціативи</h4>
+            <h4 class="uk-card-title"><i class="fas fa-lightbulb uk-margin-small-right uk-text-success"></i>Мої ініціативи</h4>
             <div class="uk-overflow-auto">
               <table class="uk-table uk-table-small uk-table-divider uk-table-hover">
                   <caption class="uk-margin-small-bottom"><i class="fas fa-info uk-margin-small-right"></i>Тут Ви можете бачити зведену статистику по поданих Вами ініціативах, які ще актуальні.</caption>
@@ -72,9 +73,38 @@
                   <tbody>
                 @foreach ($initiatives as $item)
                   <tr>
-                    <td><i class="fas fa-caret-right uk-margin-small-right"></i><a class="uk-link-muted" href="{{route('initiative', $item->id)}}">{{$item->title}}</a></td>
+                    <td><i class="fas fa-caret-right uk-margin-small-right"></i>
+                      <a class="uk-link-muted" href="{{route('initiative', $item->id)}}">{{$item->title}}<i class="fas fa-link uk-margin-small-left uk-text-small"></i></a></td>
                     <td class="uk-text-italic">{{$item->date_start}}</td>
                     <td>{{$item->vac_res}}</td>
+                    <td>@lang('statuses.' . $item->status)</td>
+                  </tr>
+                @endforeach
+                  </tbody>
+            </table>
+          </div>
+        @endif
+        {{-- initiative subscribed --}}
+        @if(count($subscribe_in) > 0)
+            <h4 class="uk-card-title"><i class="fas fa-stream uk-margin-small-right uk-text-success"></i>Підписки на ініціативи</h4>
+            <div class="uk-overflow-auto">
+              <table class="uk-table uk-table-small uk-table-divider uk-table-hover">
+                  <caption class="uk-margin-small-bottom"><i class="fas fa-info uk-margin-small-right"></i>Ваші підписки на актуальні ініціативи</caption>
+                  <thead class="bg-green txt-light">
+                      <tr>
+                          <td class="uk-text-uppercase">Назва</td>
+                          <td class="uk-text-uppercase">Дата</td>
+                          {{-- <td class="uk-text-uppercase">Учасників</td> --}}
+                          <td class="uk-text-uppercase">Статус</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                @foreach ($subscribe_in as $item)
+                  <tr>
+                    <td><i class="fas fa-caret-right uk-margin-small-right"></i>
+                      <a class="uk-link-muted" href="{{route('initiative', $item->id)}}">{{$item->title}}<i class="fas fa-link uk-margin-small-left uk-text-small"></i></a></td>
+                    <td class="uk-text-italic">{{$item->date_start}}</td>
+                    {{-- <td>{{$item->vac_res}}</td> --}}
                     <td>@lang('statuses.' . $item->status)</td>
                   </tr>
                 @endforeach

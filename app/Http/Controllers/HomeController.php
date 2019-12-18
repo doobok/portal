@@ -29,7 +29,8 @@ class HomeController extends Controller
 
         return view('home', [
           'user' => $user,
-          'initiatives' => $user->initiatives->where('date_start', '>', $now),          
+          'initiatives' => $user->initiatives->where('date_start', '>', $now),
+          'subscribe_in' => $user->events->where('date_start', '>', $now),          
         ]);
     }
 }

@@ -92,7 +92,7 @@ class InitiativesController extends Controller
       // get initiative
       $initiative = Initiative::findOrFail($request->id);
       // check availability
-      if ($initiative->vac_num <= $initiative->vac_res) {
+      if ($initiative->vac_num != null AND $initiative->vac_num <= $initiative->vac_res) {
         return response()->json('Невдача! Ініціатива вже заповнена');
       }
       // check subscribe

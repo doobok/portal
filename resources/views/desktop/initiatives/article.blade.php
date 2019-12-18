@@ -64,20 +64,34 @@
 
     </article>
 
-    {{-- @if($countdown AND $countdown != 1) --}}
-    <initiative-article-subscribe :item="{{$page}}"></initiative-article-subscribe>
-    {{-- @endif --}}
+    @if($countdown AND $countdown != 1)
+
+      @guest
+        <div class="uk-alert-danger" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          <p>Для того, щоб долучитись до ініціативи потрібно авторизуватись.</p>
+        </div>
+      @else
+        <initiative-article-subscribe :item="{{$page}}"></initiative-article-subscribe>
+      @endguest
+
+
+
+    @endif
 
 
 
     @can('update', $page)
     <div class="uk-card uk-card-default uk-margin-bottom uk-width-1-1 uk-margin-top">
-        <div class="uk-card-header">
-          <p class="uk-text-meta"><i class="fas fa-users uk-margin-small-right"></i>Зареєстровані / ліміт: <b>{{$page->vac_res . ' / ' . $page->vac_num}}</b></p>
-          @isset($page->vac_num)
-            <progress class="uk-progress" value="{{$page->vac_res}}" max="{{$page->vac_num}}"></progress>
-          @endisset
-        </div>
+      <div class="uk-card-header">
+      @if ($page->vac_num)
+        <p class="uk-text-meta"><i class="fas fa-users uk-margin-small-right"></i>Зареєстровані / ліміт: <b>{{$page->vac_res . ' / ' . $page->vac_num}}</b></p>
+        <progress class="uk-progress" value="{{$page->vac_res}}" max="{{$page->vac_num}}"></progress>
+      @else
+        <p class="uk-text-meta"><i class="fas fa-users uk-margin-small-right"></i>Зареєстрованих учасників: <b>{{$page->vac_res}}</b></p>
+      @endif
+      </div>
+
         @if (count($subscribers) > 0)
           <div class="uk-card-body uk-overflow-auto">
             <table class="uk-table uk-table-striped uk-table-small uk-table-hover">

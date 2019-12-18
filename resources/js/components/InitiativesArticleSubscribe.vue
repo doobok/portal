@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-text-center uk-margin-top">
+  <div class="uk-text-center uk-margin">
         <button @click="subscribe" class="uk-button uk-button-default uk-alert-success uk-button-large" type="button" :disabled="closed"><i class="fas fa-puzzle-piece uk-margin-small-right"></i>{{msg}}</button>
         <button @click="unsubscribe" v-if="subscribed" class="uk-button uk-button-large uk-button-danger" type="button">Відписатись</button>
   </div>
