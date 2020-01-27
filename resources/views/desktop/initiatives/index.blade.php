@@ -18,11 +18,6 @@
   <section class="nav-bg bg-green">
   </section>
 
-  @component('components.breadcrumbs')
-    @slot('title_1') @lang('site.initiatives') @endslot
-    @slot('route_1')  @endslot
-  @endcomponent
-
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true;">
 
     <ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
@@ -31,7 +26,8 @@
             <div class="uk-cover-container">
                 <img src="{{Voyager::image($article->image)}}" alt="" uk-cover>
                 <div class="uk-text-center uk-position-medium uk-position-cover uk-overlay transparent-dark uk-flex uk-flex-column uk-flex-middle uk-flex-center">
-                  <h4 class="uk-heading-small uk-margin-small-bottom">{{$article->title}}</h4>
+                  <p class="uk-text-italic uk-margin-remove"><i class="fas fa-star uk-margin-small-right"></i>пріорітетний контент</p>
+                  <h4 class="uk-heading-small uk-margin-remove-top uk-margin-small-bottom">{{$article->title}}</h4>
                   <h5 class="uk-visible@m uk-width-3-4 uk-margin-remove-top">{{$article->teaser}}</h5>
                   <a class="uk-button uk-button-default uk-button-large" href="{{route('initiative', $article->id)}}">@lang('site.read-more')</a>
                 </div>
@@ -45,6 +41,11 @@
     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
 
 </div>
+
+@component('components.breadcrumbs')
+  @slot('title_1') @lang('site.initiatives') @endslot
+  @slot('route_1')  @endslot
+@endcomponent
 
   <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
 
