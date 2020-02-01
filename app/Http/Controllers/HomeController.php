@@ -29,8 +29,19 @@ class HomeController extends Controller
 
         return view('home', [
           'user' => $user,
+          'messages' => $user->messages->where('read', '==', NULL)->count(),
           'initiatives' => $user->initiatives->where('date_start', '>', $now),
-          'subscribe_in' => $user->events->where('date_start', '>', $now),          
+          'subscribe_in' => $user->events->where('date_start', '>', $now),
+        ]);
+    }
+    // user messages
+    public function messages()
+    {
+        $user = Auth::user();
+
+        return view('desktop.userpanel.messages', [
+          'count' => $user->messages->where('read', '==', NULL)->count(),
+          'messages' => $user->messages,
         ]);
     }
 }

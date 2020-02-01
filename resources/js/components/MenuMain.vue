@@ -29,7 +29,9 @@
       <li class="uk-card-hover">
         <a href="#">
           <i v-if="!user" class="fas fa-user"></i>
-          <i v-if="user" class="fas fa-user-shield"></i>
+          <i v-if="user" class="fas fa-user-shield">
+            <msg-check></msg-check>
+          </i>
         </a>
         <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">
 

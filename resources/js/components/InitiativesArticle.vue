@@ -132,8 +132,6 @@ export default{
         return status;
       }
   },
-  computed: {
 
-  }
 }
 </script>

@@ -17,6 +17,9 @@ Vue.component('initiative-article', require('./components/InitiativesArticle.vue
 Vue.component('initiative-article-subscribe', require('./components/InitiativesArticleSubscribe.vue').default);
 Vue.component('initiative-article-moder', require('./components/InitiativesArticleModerate.vue').default);
 Vue.component('initiative-add', require('./components/InitiativesAddForm.vue').default);
+Vue.component('msg-send', require('./components/MessageSend.vue').default);
+Vue.component('msg-check', require('./components/MessageCheck.vue').default);
+Vue.component('msg-article', require('./components/MessagesArticle.vue').default);
 
 
 const app = new Vue({

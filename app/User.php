@@ -46,4 +46,9 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     {
         return $this->belongsToMany('App\Initiative', 'initiative_user');
     }
+    // income messages
+    public function messages()
+    {
+        return $this->hasMany('App\Message', 'to');
+    }
 }

@@ -11,6 +11,11 @@
           <menu-main user="{{auth()->user()}}"></menu-main>
 
         <a class="uk-navbar-toggle uk-navbar-item uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+        @auth
+          
+          <msg-check class="uk-hidden@s"></msg-check>
+
+        @endauth
       </div>
     </nav>
   </div>

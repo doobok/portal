@@ -98,12 +98,10 @@
               <tbody>
                 @foreach ($subscribers as $subscriber)
                   <tr>
+                      <td><img class="uk-border-circle" width="20" height="20" src="{{Voyager::image($subscriber->avatar)}}"></td>
                       <td>{{$subscriber->name}}</td>
                       <td>{{substr($subscriber->email, 0, 3)}}***{{stristr($subscriber->email, '@')}}</td>
-                      <td>+38034839483</td>
-                      <td class="uk-table-shrink">
-                          <button class="uk-button uk-button-danger uk-button-small" type="button">Вилучити</button>
-                      </td>
+
                   </tr>
                 @endforeach
 
@@ -122,14 +120,23 @@
           <p class="uk-text-meta"><i class="fas fa-info uk-margin-small-right"></i>Інформація про автора ініціативи</p>
         </div>
         <div class="uk-card-body">
-          <div class="uk-grid-small uk-flex-middle" uk-grid>
-              <div class="uk-width-auto">
-                  <img class="uk-border-circle" width="40" height="40" src="{{Voyager::image($author->avatar)}}">
-              </div>
-              <div class="uk-width-expand">
-                  <h3 class="uk-card-title uk-margin-remove-bottom">{{$author->name}}</h3>
-                  <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">На сайті з {{$author->created_at}}</time></p>
-              </div>
+          <div class="uk-grid-small uk-child-width-1-2@m" uk-grid>
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="40" height="40" src="{{Voyager::image($author->avatar)}}">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">{{$author->name}}</h3>
+                    <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">На сайті з {{$author->created_at}}</time></p>
+                </div>
+            </div>
+            <div>
+
+              @auth
+                <msg-send :to="{{$author->id}}"></msg-send>
+              @endauth
+
+            </div>
           </div>
         </div>
     </div>

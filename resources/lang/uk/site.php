@@ -42,6 +42,7 @@ return [
     'no-days-off' => 'без перерви, без вихідних',
     //Titles
     'user-profile' => 'Профіль користувача',
+    'you-messages' => 'Ваші сповіщення',
     'initiatives' => 'Ініціативи',
     'add-initiative' => 'Запропонувати ініціативу',
     // Date Time

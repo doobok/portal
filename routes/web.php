@@ -29,11 +29,15 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::post('initiative-subscribe', 'InitiativesController@subscribe');
   Route::post('initiative-unsubscribe', 'InitiativesController@unsubscribe');
   Route::post('initiative-upd/{id}', 'InitiativesController@update');
+  Route::post('msg-send', 'Vue\MessageController@sendMsg');
+  Route::get('msg-check', 'Vue\MessageController@check');
+  Route::get('messages', 'Vue\MessageController@messages');
 
 });
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/messages', 'HomeController@messages')->name('messages');
 
 
 Route::group(['prefix' => 'admin'], function () {
