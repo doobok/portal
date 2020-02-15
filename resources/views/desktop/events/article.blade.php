@@ -35,7 +35,7 @@
 
       </div>
       <div class="uk-margin-medium" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > *; delay: 1500">
-        <button class="uk-button uk-button-default uk-button-large uk-align-center"><i class="fas fa-bookmark uk-margin-small-right"></i>Забронювати місце</button>
+        <a href="#order" class="uk-button uk-button-default uk-button-large uk-align-center uk-width-medium" uk-scroll><i class="fas fa-bookmark uk-margin-small-right"></i>Забронювати місце</a>
       </div>
 
     </div>
@@ -63,6 +63,16 @@
 
     </article>
 
+    <div id="order" class="uk-margin-large">
+
+      <backet-add
+        title="{{$page->title}}"
+        price="{{$page->price}}"
+        model="event"
+        model_id="{{$page->id}}">
+      </backet-add>
+
+    </div>
 
   </div>
 

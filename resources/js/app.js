@@ -3,6 +3,9 @@ require('./bootstrap');
 // Vue
 window.Vue = require('vue');
 
+// store
+import store from './store/index';
+
 // Vuelidate
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
@@ -20,8 +23,12 @@ Vue.component('initiative-add', require('./components/InitiativesAddForm.vue').d
 Vue.component('msg-send', require('./components/MessageSend.vue').default);
 Vue.component('msg-check', require('./components/MessageCheck.vue').default);
 Vue.component('msg-article', require('./components/MessagesArticle.vue').default);
+Vue.component('backet-check', require('./components/BacketCheck.vue').default);
+Vue.component('backet-main', require('./components/BacketMain.vue').default);
+Vue.component('backet-add', require('./components/BacketAddItem.vue').default);
 
 
 const app = new Vue({
    el: '#app',
+   store
 });

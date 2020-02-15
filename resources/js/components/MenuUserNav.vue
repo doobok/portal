@@ -3,6 +3,7 @@
     <template v-if="user">
       <li><a href="/home"><i class="fas fa-user-circle uk-margin-right"></i>Профіль</a></li>
       <li><a href="/user/messages"><i class="fas fa-comment-alt uk-margin-right"></i>Сповіщення <msg-check></msg-check></a></li>
+      <li><a href="/user/backet"><i class="fas fa-shopping-cart uk-margin-right"></i>Кошик</a></li>
       <li class="uk-nav-divider"></li>
       <li><a @click="logout"><i class="fas fa-sign-out-alt uk-margin-right"></i>Вихід</a></li>
     </template>
@@ -32,7 +33,7 @@ export default{
             })
             .catch(error => console.log(error));
     },
-  }
+  },
 
 }
 </script>

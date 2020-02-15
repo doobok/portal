@@ -31,6 +31,7 @@
           <i v-if="!user" class="fas fa-user"></i>
           <i v-if="user" class="fas fa-user-shield">
             <msg-check></msg-check>
+            <backet-check></backet-check>
           </i>
         </a>
         <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right; offset: 0">

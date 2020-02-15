@@ -23,7 +23,8 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import UIkit from 'uikit';
+// import UIkit from 'uikit';
+window.UIkit = require('uikit');
 
 
 /**

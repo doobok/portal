@@ -46,6 +46,7 @@ return [
     'initiatives' => 'Ініціативи',
     'events' => 'Івенти',
     'add-initiative' => 'Запропонувати ініціативу',
+    'backet' => 'Кошик',
     // Date Time
     'days' => 'дні',
     'hours' => 'години',

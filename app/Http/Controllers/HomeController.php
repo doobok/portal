@@ -40,8 +40,13 @@ class HomeController extends Controller
         $user = Auth::user();
 
         return view('desktop.userpanel.messages', [
-          'count' => $user->messages->where('read', '==', NULL)->count(),
-          'messages' => $user->messages,
+          'count' => $user->messages->where('read', '==', NULL)->count()
         ]);
+    }
+
+    // backet
+    public function backet()
+    {
+        return view('desktop.userpanel.backet');
     }
 }
