@@ -39,6 +39,9 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::get('backet-get', 'Vue\BacketController@getItems');
   Route::post('backet-book', 'Vue\BacketController@bookItems');
   Route::patch('backet-remove/{id}', 'Vue\BacketController@remove');
+  // user
+  Route::post('user-update/{id}', 'UsersController@userUpdate');
+
 
 });
 
@@ -46,6 +49,7 @@ Route::group(['prefix' => 'serv-data'], function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/messages', 'HomeController@messages')->name('messages');
 Route::get('/user/backet', 'HomeController@backet')->name('backet');
+Route::get('/user/edit', 'HomeController@editProfile')->name('useredit');
 
 
 Route::group(['prefix' => 'admin'], function () {

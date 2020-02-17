@@ -47,6 +47,7 @@ return [
     'events' => 'Івенти',
     'add-initiative' => 'Запропонувати ініціативу',
     'backet' => 'Кошик',
+    'profile-edit' => 'Редагування профілю',
     // Date Time
     'days' => 'дні',
     'hours' => 'години',

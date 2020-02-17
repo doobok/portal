@@ -45,7 +45,7 @@
 
   <div class="uk-card uk-card-default uk-width-1-1">
       <div class="uk-card-header">
-          <a href="#" class="uk-link-muted uk-float-right" title="Редагувати профіль"><i class="fas fa-pen"></i></a>
+          <a href="{{route('useredit')}}" class="uk-link-muted uk-float-right" title="Редагувати профіль"><i class="fas fa-pen"></i></a>
           <div class="uk-grid-small uk-flex-middle" uk-grid>
               <div class="uk-width-auto">
                   <img class="uk-border-circle" width="80" height="80" src="{{Voyager::image($user->avatar)}}">

@@ -23,7 +23,7 @@
 <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
 <div class="uk-container">
 
-  <h1 class="uk-heading-divider uk-h3"><i class="far fa-comment-alt"></i> @lang('site.you-messages') <span class="uk-text-small uk-label-danger">Непрочитаних: {{$count}}</span></h1>
+  <h1 class="uk-heading-divider uk-h3"><i class="far fa-comment-alt"></i> @lang('site.you-messages')</h1>
 
   <msg-article></msg-article>
 

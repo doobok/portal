@@ -49,4 +49,10 @@ class HomeController extends Controller
     {
         return view('desktop.userpanel.backet');
     }
+
+    // user profile edit
+    public function editProfile()
+    {
+        return view('desktop.userpanel.useredit');
+    }
 }
