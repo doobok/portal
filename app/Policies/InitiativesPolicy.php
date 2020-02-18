@@ -10,6 +10,13 @@ class InitiativesPolicy
 {
     use HandlesAuthorization;
 
+    public function before(User $user)
+    {
+        if ($user->role_id === 1 || $user->role_id === 4) {
+            return true;
+        }
+    }
+
     /**
      * Determine whether the user can view any initiatives.
      *

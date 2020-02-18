@@ -64,5 +64,7 @@ Route::get('/initiatives/add', 'InitiativesController@add')->name('initiative-ad
 Route::get('/initiatives/{id}', 'InitiativesController@article')->name('initiative');
 Route::get('/events', 'EventsController@index')->name('events');
 Route::get('/events/{id}', 'EventsController@article')->name('event');
+Route::get('/courses', 'CoursesController@index')->name('courses');
+Route::get('/courses/{id}', 'CoursesController@article')->name('course');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/{slug}', 'PagesController@index')->name('page');

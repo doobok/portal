@@ -45,6 +45,7 @@ return [
     'you-messages' => 'Ваші сповіщення',
     'initiatives' => 'Ініціативи',
     'events' => 'Івенти',
+    'courses' => 'Навчальні курси',
     'add-initiative' => 'Запропонувати ініціативу',
     'backet' => 'Кошик',
     'profile-edit' => 'Редагування профілю',

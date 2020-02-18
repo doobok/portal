@@ -25,7 +25,9 @@ class InitiativesController extends Controller
       if (Auth::check()) {
         $article = Initiative::findOrFail($id);
         // check permissions
-        $this->authorize('view', $article);
+        if ($article->status != 'published') {
+          $this->authorize('view', $article);
+        }
       } else {
         $article = Initiative::where('status', 'published')->findOrFail($id);
       }
