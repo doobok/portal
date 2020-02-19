@@ -42,7 +42,6 @@ Route::group(['prefix' => 'serv-data'], function () {
   // user
   Route::post('user-update/{id}', 'UsersController@userUpdate');
 
-
 });
 
 
@@ -50,6 +49,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/messages', 'HomeController@messages')->name('messages');
 Route::get('/user/backet', 'HomeController@backet')->name('backet');
 Route::get('/user/edit', 'HomeController@editProfile')->name('useredit');
+Route::get('/user/{id}', 'HomeController@publicUsProfile')->name('user');
 
 
 Route::group(['prefix' => 'admin'], function () {

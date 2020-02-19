@@ -1,6 +1,10 @@
 <title>{{ $title }} | {{config('app.name')}}</title>
 <meta name="description" content="{{ $description }}">
+@isset($robots)
+<meta name="robots" content="{{$robots}}">
+@else
 <meta name="robots" content="index, follow">
+@endisset
 <meta name="author" content="{{config('app.name')}}">
 <meta name="copyright" content="Copyright (c) 2019-{{ date("Y") }} by {{config('app.name')}}">
 

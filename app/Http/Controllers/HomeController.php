@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -48,6 +49,16 @@ class HomeController extends Controller
     public function backet()
     {
         return view('desktop.userpanel.backet');
+    }
+
+    // user public page
+    public function publicUsProfile($id)
+    {
+      $article = User::findOrFail($id)->select('id', 'name', 'avatar', 'created_at')->first();
+
+      return view('desktop.userpanel.public-profile', [
+        'page' => $article
+      ]);
     }
 
     // user profile edit

@@ -4,7 +4,6 @@
   @component('components.meta')
 
     @slot('title') @lang('site.courses') @endslot
-
     @slot('description') Опис  @endslot
     @slot('image') img  @endslot
 

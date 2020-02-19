@@ -7,6 +7,7 @@
     @slot('description') @endslot
     @slot('image')  @endslot
     @slot('date')  @endslot
+    @slot('robots') noindex, nofollow @endslot
 
   @endcomponent
 @endsection

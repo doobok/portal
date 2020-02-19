@@ -23,6 +23,9 @@ class UsersController extends Controller
 
        $user = User::findOrFail($id);
 
+       // check premission fo update
+       $this->authorize('update', $user);
+
        $user->name = request('name');
        if ($request->avatarprsnt) {
          $user->avatar = request('avatar');
