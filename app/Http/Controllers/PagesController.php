@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Page;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -17,8 +18,22 @@ class PagesController extends Controller
       ]);
     }
 
+    // contacts
     public function contacts()
     {
       return view('desktop.pages.contacts');
+    }
+
+    // user public page
+    public function publicUsProfile($id)
+    {
+      $article = User::where('name', $id)->select('id', 'name', 'avatar', 'created_at', 'salute')->first();
+      if (!$article) {
+        return back();
+      }
+
+      return view('desktop.userpanel.public-profile', [
+        'page' => $article
+      ]);
     }
 }

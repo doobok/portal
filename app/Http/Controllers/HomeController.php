@@ -49,17 +49,7 @@ class HomeController extends Controller
     public function backet()
     {
         return view('desktop.userpanel.backet');
-    }
-
-    // user public page
-    public function publicUsProfile($id)
-    {
-      $article = User::findOrFail($id)->select('id', 'name', 'avatar', 'created_at')->first();
-
-      return view('desktop.userpanel.public-profile', [
-        'page' => $article
-      ]);
-    }
+    }  
 
     // user profile edit
     public function editProfile()

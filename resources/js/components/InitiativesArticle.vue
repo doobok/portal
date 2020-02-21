@@ -16,9 +16,6 @@
               <span class="uk-heading-small uk-margin-remove uk-tile-secondary uk-text-center uk-width-1-1" style="opacity: 0.7"><i class="far fa-calendar-check uk-margin-small-right"></i> {{item.date_start.substring(0,10)}} </span>
             </div>
           </a>
-
-
-            <!-- <img src="/dum.jpg" alt="" uk-cover> -->
             <canvas width="600" height="400"></canvas>
         </div>
         <div>

@@ -1,17 +1,10 @@
 <template>
   <div>
 
-    <div class="uk-flex uk-flex-middle uk-flex-center">
-      <div><span class="uk-heading-medium">{{price}}</span></div>
-      <div><span class="uk-heading-small"> грн.</span></div>
-      <div>
         <button
-        class="uk-button uk-button-large bg-green uk-light"
+        class="uk-button uk-button-large uk-width-1-1 bg-green uk-light"
         @click="addToBacket"
-        title="Додати в кошик"
-        ><i class="fas fa-receipt uk-visible@s"></i> Придбати</button>
-      </div>
-    </div>
+        ><i class="fas fa-receipt"></i> Додати в кошик</button>
 
     <div ref="modalbuy" uk-modal>
         <div class="uk-modal-dialog">

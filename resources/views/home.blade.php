@@ -52,16 +52,24 @@
                   <img class="uk-border-circle" width="80" height="80" src="{{Voyager::image($user->avatar)}}">
               </div>
               <div class="uk-width-expand">
-                  <h3 class="uk-card-title uk-margin-remove-bottom">{{$user->name}}</h3>
+                  <h3 class="uk-card-title uk-margin-remove-bottom">{{$user->name}}
+                    @isset($user->first_name)
+                      <span class="uk-text-meta">({{$user->first_name}} {{$user->last_name}})</span>
+                    @endisset
+                  </h3>
                   <p class="uk-text-meta uk-margin-remove-top">{{$user->email}}</p>
+                  <a class="uk-link-reset uk-margin-right" href="{{route('user', $user->name)}}" title="Переглянути публічну сторінку"><i class="fas fa-eye"></i></a>
                   @if($messages > 0)
-                    <a href="{{route('messages')}}" class="uk-text-danger"><i class="fas fa-envelope uk-margin-small-right"></i>Непрочитаних повідомлень {{$messages}}</a>
+                    <a href="{{route('messages')}}" class="uk-text-danger"><i class="fas fa-envelope uk-margin-small-right"></i>{{$messages}}</a>
                   @endif
               </div>
-              <div>
-                <h5 class="uk-heading-line"><span>Про себе</span></h5>
-                <p class="uk-text-meta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
+              @isset($user->salute)
+                <div>
+                  <h5 class="uk-heading-line"><span>Про себе</span></h5>
+                  <p class="uk-text-meta">{{$user->salute}}</p>
+                </div>
+              @endisset
+
           </div>
       </div>
       <div class="uk-card-body">
@@ -121,9 +129,6 @@
             </table>
           </div>
         @endif
-      </div>
-      <div class="uk-card-footer">
-          <a href="#" class="uk-button uk-button-text">Read more</a>
       </div>
   </div>
 

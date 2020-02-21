@@ -18,6 +18,13 @@
           </div>
 
           <div class="uk-margin">
+              <label class="uk-text-muted">Імʼя користувача</label>
+              <div class="uk-form-controls">
+                  <input v-model="name" class="uk-input" type="text" disabled>
+              </div>
+          </div>
+
+          <div class="uk-margin">
               <label class="uk-text-muted">E-mail</label>
               <div class="uk-form-controls">
                   <input v-model="email" class="uk-input" type="text" disabled>
@@ -25,17 +32,37 @@
           </div>
 
           <div class="uk-margin">
-              <label class="uk-text-muted">Імʼя користувача</label>
+              <label class="uk-text-muted">Ваше імʼя</label>
               <div class="uk-form-controls">
-                  <input v-model="name" class="uk-input" type="text" @blur="$v.name.$touch()">
-                  <div class="uk-alert uk-alert-danger" v-if="$v.name.$error">
-                       <template v-if="!$v.name.maxLength">
-                         Довжина не має перевищувати {{ $v.name.$params.maxLength.max }} cимволів
-                       </template>
-                       <template v-else>
-                         Поле обовʼязкове для заповнення
-                       </template>
+                  <input v-model="first_name" class="uk-input" type="text" @blur="$v.first_name.$touch()">
+                  <div class="uk-alert uk-alert-danger" v-if="$v.first_name.$error">
+                      Довжина не має перевищувати {{ $v.first_name.$params.maxLength.max }} cимволів
                    </div>
+              </div>
+          </div>
+
+          <div class="uk-margin">
+              <label class="uk-text-muted">Прізвище</label>
+              <div class="uk-form-controls">
+                  <input v-model="last_name" class="uk-input" type="text" @blur="$v.last_name.$touch()">
+                  <div class="uk-alert uk-alert-danger" v-if="$v.last_name.$error">
+                      Довжина не має перевищувати {{ $v.last_name.$params.maxLength.max }} cимволів
+                   </div>
+              </div>
+          </div>
+
+          <div class="uk-margin">
+              <label class="uk-text-muted">Номер телефону</label>
+              <div class="uk-form-controls">
+                  <input
+                      ref="phoneNum"
+                      id="phone"
+                      type="text"
+                      name="phone"
+                      class="uk-input"
+                      placeholder="Контактний номер"
+                      v-model="phone"
+                  >
               </div>
           </div>
 
@@ -44,8 +71,11 @@
               <label class="uk-text-muted">Коротко про себе
               </label>
               <div class="uk-form-controls">
-                  <textarea v-model="teaser" class="uk-textarea" rows="4"></textarea>
+                  <textarea v-model="salute" class="uk-textarea" rows="5" @blur="$v.salute.$touch()"></textarea>
               </div>
+              <div class="uk-alert uk-alert-danger" v-if="$v.salute.$error">
+                  Не поспішай, в це поле можна додати максимум {{ $v.salute.$params.maxLength.max }} cимволів
+               </div>
           </div>
 
           <div class="uk-alert uk-alert-danger" v-if="errors">
@@ -69,6 +99,7 @@
 </template>
 
 <script>
+import Inputmask from 'inputmask';
 import { required, maxLength } from "vuelidate/lib/validators";
 export default{
   props:['user'],
@@ -76,8 +107,11 @@ export default{
       return{
         user_id: '',
         name: '',
+        first_name: '',
+        last_name: '',
+        phone: '',
         email: '',
-        teaser: '',
+        salute: '',
         avatar: '',
         errors: '',
       }
@@ -86,8 +120,15 @@ export default{
     let usr = JSON.parse(this.user);
     this.user_id = usr.id;
     this.name = usr.name;
+    this.first_name = usr.first_name;
+    this.last_name = usr.last_name;
+    this.phone = usr.phone;
+    this.salute = usr.salute;
     this.email = usr.email;
     this.avatar = usr.avatar;
+
+    var im = new Inputmask('+99 '+'(999) 999-9999');
+    im.mask(this.$refs.phoneNum);
   },
   methods: {
     send() {
@@ -103,20 +144,19 @@ export default{
             let e = { ...err    }
             alert('Щось пішло не так, перевірте форму і спробуйте ще ;)');
             this.errors = e.response.data.errors;
-            // console.log(e.response.data);
           });
     },
     onAttachmentChange (e) {
-            // this.imgselected = true;
             this.image = e.target.files[0]
         }
   },
   computed: {
     collectedForm: function() {
       const data = new FormData();
-        data.append('name', this.name)
-        data.append('teaser', this.teaser)
-        data.append('body', this.body)
+        data.append('first_name', this.first_name)
+        data.append('last_name', this.last_name)
+        data.append('phone', this.phoneComp)
+        data.append('salute', this.salute)
         if (this.image) {
           data.append('avatarprsnt', true)
         }
@@ -124,11 +164,22 @@ export default{
         data.append('user_id', this.user_id)
       return data;
     },
+    phoneComp: function() {
+        var str = this.phone;
+        str = str.replace(/[^0-9.]/g, '');
+        // str = str.substring(2);
+        return str;
+    }
   },
   validations: {
-        name: {
-          required,
-          maxLength: maxLength(50),
+        first_name: {
+          maxLength: maxLength(20),
+        },
+        last_name: {
+          maxLength: maxLength(30),
+        },
+        salute: {
+          maxLength: maxLength(300),
         },
       },
 }

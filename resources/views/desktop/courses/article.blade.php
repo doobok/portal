@@ -34,12 +34,9 @@
         @endif
 
       </div>
-
-      @if($countdown != 1)
-        <div class="uk-margin-medium" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > *; delay: 1500">
-          <a href="#order" class="uk-button uk-button-default uk-button-large uk-align-center uk-width-medium" uk-scroll><i class="fas fa-bookmark uk-margin-small-right"></i>Забронювати місце</a>
-        </div>
-      @endif
+      <div class="uk-margin-medium" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > *; delay: 1500">
+        <a href="#order" class="uk-button uk-button-default uk-button-large uk-align-center uk-width-medium" uk-scroll><i class="fas fa-bookmark uk-margin-small-right"></i>Забронювати місце</a>
+      </div>
 
     </div>
     <!-- /TOP CONTAINER -->
@@ -68,13 +65,12 @@
 
     <div id="order" class="uk-margin-large">
 
-  @component('components.get-ticket', [
-      'price' => $page->price,
-      'model' => 'event',
-      'model_id' => $page->id,
-    ])
-    @slot('title')Участь в заході: «{{$page->title}}»@endslot
-  @endcomponent      
+      <backet-add
+        title="{{$page->title}}"
+        price="{{$page->price}}"
+        model="event"
+        model_id="{{$page->id}}">
+      </backet-add>
 
     </div>
 

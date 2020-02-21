@@ -17,7 +17,6 @@ class UsersController extends Controller
     public function userUpdate(Request $request, $id)
     {
       $this->validate(request(), [
-            'name' => 'required|min:3',
             'avatar' => 'sometimes|required|max:5000',
        ]);
 
@@ -26,7 +25,10 @@ class UsersController extends Controller
        // check premission fo update
        $this->authorize('update', $user);
 
-       $user->name = request('name');
+       $user->first_name = request('first_name');
+       $user->last_name = request('last_name');
+       $user->phone = request('phone');
+       $user->salute = request('salute');
        if ($request->avatarprsnt) {
          $user->avatar = request('avatar');
        }
