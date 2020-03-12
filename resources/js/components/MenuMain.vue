@@ -1,5 +1,5 @@
 <template>
-  <ul class="uk-navbar-nav uk-visible@s">
+  <ul class="uk-navbar-nav uk-visible@m">
     <li class="uk-card-hover uk-visible@m"><a href="/"><i class="fas fa-home"></i></a></li>
 
     <template v-for="item in menu">

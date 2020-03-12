@@ -19,23 +19,12 @@
         <h1 class="uk-margin-remove-top">{{$page->title}}</h1>
         {{-- <p class="subtitle-text">{{$page->teaser}}</p> --}}
 
-        <p class="uk-h4"><i class="far fa-calendar-check uk-margin-small-right"></i>{{$date}}</p>
+        {{-- <p class="uk-h4"><i class="far fa-calendar-check uk-margin-small-right"></i>{{$date}}</p> --}}
 
-        @if($countdown === 1)
-          <p class="">
-            <span><i class="fas fa-check-circle uk-margin-small-right"></i>@lang('site.event-finish')</span>
-          </p>
-        @else
-          <p class="uk-article-meta uk-margin-small-bottom"><span><i class="fas fa-hourglass-start uk-margin-small-right"></i>@lang('site.to-start-event'):</span>
-          </p>
-          @component('components.countdown')
-            @slot('time') {{$countdown}} @endslot
-          @endcomponent
-        @endif
 
       </div>
-      <div class="uk-margin-medium" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > *; delay: 1500">
-        <a href="#order" class="uk-button uk-button-default uk-button-large uk-align-center uk-width-medium" uk-scroll><i class="fas fa-bookmark uk-margin-small-right"></i>Забронювати місце</a>
+      <div class="uk-margin-medium uk-margin-large-top" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > *; delay: 1500">
+        <a href="#order" class="uk-button uk-button-default uk-button-large uk-align-center uk-width-medium" uk-scroll><i class="fas fa-money-bill-wave tada uk-margin-small-right"></i>Придбати курс</a>
       </div>
 
     </div>
@@ -47,8 +36,8 @@
 </div>
 
 @component('components.breadcrumbs')
-  @slot('title_1') @lang('site.events') @endslot
-  @slot('route_1') {{route('events')}} @endslot
+  @slot('title_1') @lang('site.courses') @endslot
+  @slot('route_1') {{route('courses')}} @endslot
   @slot('title_2') {{$page->title}} @endslot
 @endcomponent
 
@@ -65,12 +54,13 @@
 
     <div id="order" class="uk-margin-large">
 
-      <backet-add
-        title="{{$page->title}}"
-        price="{{$page->price}}"
-        model="event"
-        model_id="{{$page->id}}">
-      </backet-add>
+      @component('components.get-ticket', [
+          'price' => $page->price,
+          'model' => 'course',
+          'model_id' => $page->id,
+        ])
+        @slot('title')Курс: «{{$page->title}}»@endslot
+      @endcomponent
 
     </div>
 

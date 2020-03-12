@@ -63,14 +63,13 @@
                     <a href="{{route('messages')}}" class="uk-text-danger"><i class="fas fa-envelope uk-margin-small-right"></i>{{$messages}}</a>
                   @endif
               </div>
-              @isset($user->salute)
-                <div>
-                  <h5 class="uk-heading-line"><span>Про себе</span></h5>
-                  <p class="uk-text-meta">{{$user->salute}}</p>
-                </div>
-              @endisset
-
           </div>
+          @isset($user->salute)
+            <div class="uk-margin-small-top">
+              <h5 class="uk-heading-line"><span>Про себе</span></h5>
+              <p class="uk-text-meta">{{$user->salute}}</p>
+            </div>
+          @endisset
       </div>
       <div class="uk-card-body">
         {{-- created snitiatives --}}

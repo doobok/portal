@@ -153,10 +153,18 @@ export default{
   computed: {
     collectedForm: function() {
       const data = new FormData();
-        data.append('first_name', this.first_name)
-        data.append('last_name', this.last_name)
-        data.append('phone', this.phoneComp)
-        data.append('salute', this.salute)
+        if (this.first_name) {
+          data.append('first_name', this.first_name)
+        }
+        if (this.last_name) {
+          data.append('last_name', this.last_name)
+        }
+        if (this.phoneComp) {
+          data.append('phone', this.phoneComp)
+        }
+        if (this.salute) {
+          data.append('salute', this.salute)
+        }
         if (this.image) {
           data.append('avatarprsnt', true)
         }

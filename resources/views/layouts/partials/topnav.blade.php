@@ -10,11 +10,11 @@
 
           <menu-main user="{{auth()->user()}}"></menu-main>
 
-        <a class="uk-navbar-toggle uk-navbar-item uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+        <a class="uk-navbar-toggle uk-navbar-item uk-hidden@m" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
         @auth
 
-          <msg-check class="uk-hidden@s"></msg-check>
-          <backet-check class="uk-hidden@s"></msg-backet>
+          <msg-check class="uk-hidden@m"></msg-check>
+          <backet-check class="uk-hidden@m"></msg-backet>
 
         @endauth
       </div>

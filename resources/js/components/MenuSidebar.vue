@@ -4,20 +4,9 @@
 
     <template v-for="item in menu">
        <template v-if="item.children">
-         <li class="uk-parent uk-active" :key="item.id">
-           <a href="#">
-             <span class="uk-active">{{item.title}}
-               <i class="fas fa-angle-down uk-margin-small-left"></i>
-             </span>
-           </a>
-             <ul class="uk-nav-sub">
 
-               <li class="uk-active" v-for="subitem in item.children">
-                 <a v-bind:href="'/' + subitem.url"><i class="uk-margin-right" v-bind:class="subitem.icon_class"></i>{{subitem.title}}</a>
-               </li>
+          <menu-sidebar-subs :item="item"></menu-sidebar-subs>
 
-             </ul>
-         </li>
         </template>
         <template v-else>
           <li class="uk-active" :key="item.id"><a v-bind:href="'/' + item.url">{{item.title}}</a></li>
