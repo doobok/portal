@@ -4,7 +4,7 @@
 	@include('layouts.partials.seohead')
 
 	<body>
-		
+
 		<div id="app">
 
 		@include('layouts.partials.topnav')
@@ -16,6 +16,9 @@
 		@include('layouts.partials.offcanvas')
 
 		</div>
+
+		{{--Alert --}}
+		@include('layouts.partials.dev-alert')
 
 		<script src="{{ mix('js/app.js') }}"></script>
 
