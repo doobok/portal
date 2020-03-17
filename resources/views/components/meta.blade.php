@@ -3,7 +3,9 @@
 @isset($robots)
 <meta name="robots" content="{{$robots}}">
 @else
-<meta name="robots" content="index, follow">
+{{-- <meta name="robots" content="index, follow"> --}}
+{{-- close index --}}
+<meta name="robots" content="noindex, nofollow">
 @endisset
 <meta name="author" content="{{config('app.name')}}">
 <meta name="copyright" content="Copyright (c) 2019-{{ date("Y") }} by {{config('app.name')}}">
