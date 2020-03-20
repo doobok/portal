@@ -1,0 +1,13 @@
+{
+  "Reset Password Notification": "Повідомлення про скидання пароля",
+  "You are receiving this email because we received a password reset request for your account.": "Вам відправлено цей електронний лист, тому що ми отримали запит на скидання пароля для вашого облікового запису.",
+  "Reset Password": "Скинути пароль",
+  "If you did not request a password reset, no further action is required.": "Якщо ви не ініціювали скидання пароля, не потрібно виконувати ніяких додаткових дій.",
+  "Hello!": "Вітаємо!",
+  "Regards": "З повагою",
+  "All rights reserved.": "Всі права захищені.",
+  "Verify Email Address": "Підтвердіть адресу електронної пошти",
+  "Please click the button below to verify your email address.": "Будь ласка, натисніть кнопку нижче, щоб підтвердити свою адресу електронної пошти.",
+  "If you did not create an account, no further action is required.": "Якщо ви не створювали обліковий запис, будь ласка, проігноруйте цей лист."
+
+}
