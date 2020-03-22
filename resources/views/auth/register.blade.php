@@ -29,7 +29,7 @@
         <div class="uk-margin">
     				<div class="uk-inline uk-width-1-1">
     					<span class="uk-form-icon uk-form-icon-flip"><i class="fas fa-user-tie"></i></span>
-    					<input id="name" class="uk-input uk-form-large{{ $errors->has('name') ? ' uk-form-danger' : '' }}" name="name" value="{{ old('name') }}" placeholder="@lang('site.name')" type="text" required>
+    					<input id="name" class="uk-input uk-form-large{{ $errors->has('name') ? ' uk-form-danger' : '' }}" name="name" value="{{ old('name') }}" placeholder="@lang('site.username')" type="text" required>
               @if ($errors->has('name'))
                   <span class="uk-alert-danger" role="alert">
                       <strong>{{ $errors->first('name') }}</strong>

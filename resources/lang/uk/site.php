@@ -9,6 +9,7 @@ return [
     'register' => 'Реєстрація',
     'register-on' => 'Зареєструватися',
     'name' => 'Імʼя',
+    'username' => 'Імʼя користувача',
     'you-name' => 'Ваше імʼя',
     'email' => 'E-mail',
     're-email' => 'Введіть E-mail',

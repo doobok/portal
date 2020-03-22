@@ -59,6 +59,9 @@
                   </h3>
                   <p class="uk-text-meta uk-margin-remove-top">{{$user->email}}</p>
                   <a class="uk-link-reset uk-margin-right" href="{{route('user', $user->name)}}" title="Переглянути публічну сторінку"><i class="fas fa-eye"></i></a>
+                  @if ($user->role != '2')
+                    <a class="uk-link-reset uk-margin-right" href="/admin" title="Панель керування"><i class="fas fa-cogs"></i></a>
+                  @endif
                   @if($messages > 0)
                     <a href="{{route('messages')}}" class="uk-text-danger"><i class="fas fa-envelope uk-margin-small-right"></i>{{$messages}}</a>
                   @endif

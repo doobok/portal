@@ -3,7 +3,7 @@
     <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
       <div class="uk-navbar-left">
         <div class="uk-navbar-item uk-padding-remove-horizontal">
-          <a class="uk-logo" title="Logo" href="/"><img src="/logo.png" alt="FutureBucha"></a>
+          <a class="uk-logo" title="FutureBucha" href="/"><img src="/logo.png" alt="logo"></a>
         </div>
       </div>
       <div class="uk-navbar-right">
