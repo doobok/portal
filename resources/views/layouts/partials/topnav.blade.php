@@ -21,3 +21,7 @@
     </nav>
   </div>
 </div>
+
+{{-- search --}}
+
+@include('layouts.partials.search-panel')

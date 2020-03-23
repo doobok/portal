@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +43,10 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::patch('backet-remove/{id}', 'Vue\BacketController@remove');
   // user
   Route::post('user-update/{id}', 'UsersController@userUpdate');
+  // search
+  Route::get('search', function (Request $request) {
+    return App\Search::search($request->keywords)->get();
+});
 
 });
 

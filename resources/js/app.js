@@ -28,6 +28,7 @@ Vue.component('backet-check', require('./components/BacketCheck.vue').default);
 Vue.component('backet-main', require('./components/BacketMain.vue').default);
 Vue.component('backet-add', require('./components/BacketAddItem.vue').default);
 Vue.component('user-edit', require('./components/UserEdit.vue').default);
+Vue.component('search-panel', require('./components/SearchPanel.vue').default);
 
 
 const app = new Vue({
