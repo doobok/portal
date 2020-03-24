@@ -32,7 +32,7 @@
         На вашу адресу електронної пошти було відправлено нове посилання для підтвердження.
     </div>
 @endif
-@if ($user->email_verified_at)
+@if ($user->email_verified_at === null)
   <form class="uk-padding-remove" method="POST" action="{{ route('verification.resend') }}">
     @csrf
     <div class="uk-alert-danger" uk-alert>
