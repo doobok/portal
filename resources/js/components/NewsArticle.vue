@@ -12,10 +12,10 @@
           <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" data-uk-grid>
               <div class="uk-width-auto">
-                <img class="uk-border-circle" alt="" width="40" height="40" src="https://unsplash.it/60/60/?random">
+                <img class="uk-border-circle" alt="" width="40" height="40" src="/logo-circle.png">
               </div>
               <div class="uk-width-expand">
-                <h6 class="uk-margin-remove-bottom uk-text-bold">Future in Bucha</h6>
+                <h6 class="uk-margin-remove-bottom uk-text-bold">Future Bucha</h6>
                 <p class="uk-text-meta uk-margin-remove-top uk-text-small">
                   <time>Опубліковано
                     <span class="uk-text-italic">{{item.created_at.substring(0,10)}}</span> о

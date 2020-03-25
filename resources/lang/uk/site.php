@@ -29,7 +29,7 @@ return [
     'published-at' => 'Опубліковано',
     'gallery' => 'Фотогалерея',
     'video' => 'Відео',
-    'you-be-interested' => 'Вам також буде цікаво',
+    'you-be-interested' => 'Вас також може зацікавити',
     'mainpage' => 'Головна',
     'news' => 'Новини',
     'aboutus' => 'Про нас',

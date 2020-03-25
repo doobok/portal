@@ -97,6 +97,9 @@
           </div>
         @endisset
 
+        {{-- Social share --}}
+        @include('components.social-share')
+
 
     </article>
 
@@ -126,7 +129,7 @@
   											<div class="uk-card-header">
   												<div class="uk-grid-small uk-flex-middle" data-uk-grid>
   													<div class="uk-width-auto">
-  														<img class="uk-border-circle" alt="" width="40" height="40" src="https://unsplash.it/60/60/?random">
+  														<img class="uk-border-circle" alt="" width="40" height="40" src="/logo-circle.png">
   													</div>
   													<div class="uk-width-expand">
   														<h6 class="uk-margin-remove-bottom uk-text-bold">{{config('app.name')}}</h6>

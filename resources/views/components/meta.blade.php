@@ -35,4 +35,3 @@
 <meta property="og:title"         content="{{ $title }} - {{config('app.name')}}">
 <meta property="og:description"   content="{{ $description }}">
 <meta property="og:image"         content="{{ asset($image) }}">
-<meta property="fb:app_id" content="000000000000000000000000000000000000000000000">

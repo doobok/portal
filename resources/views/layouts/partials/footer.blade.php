@@ -11,16 +11,16 @@
 
         <div>
           @if (setting('contacts.fb'))
-            <a href="https://www.facebook.com/{{setting('contacts.fb')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/{{setting('contacts.fb')}}" class="uk-icon-button uk-link-reset" target="_blank"><i class="fab fa-facebook-f"></i></a>
           @endif
           @if (setting('contacts.twitter'))
-            <a href="https://twitter.com/{{setting('contacts.twitter')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-twitter"></i></a>
+            <a href="https://twitter.com/{{setting('contacts.twitter')}}" class="uk-icon-button uk-link-reset" target="_blank"><i class="fab fa-twitter"></i></a>
           @endif
           @if (setting('contacts.instagram'))
-            <a href="https://www.instagram.com/{{setting('contacts.instagram')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/{{setting('contacts.instagram')}}" class="uk-icon-button uk-link-reset" target="_blank"><i class="fab fa-instagram"></i></a>
           @endif
           @if (setting('contacts.youtube'))
-            <a href="https://www.youtube.com/{{setting('contacts.youtube')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/{{setting('contacts.youtube')}}" class="uk-icon-button uk-link-reset" target="_blank"><i class="fab fa-youtube"></i></a>
           @endif
         </div>
       </div>
