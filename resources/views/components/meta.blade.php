@@ -31,7 +31,7 @@
 <meta name="DC.rights" content="/policy">
 <meta name="DC.rightsHolder" content="{{config('app.name')}}">
 <meta property="og:url"           content="{{url()->current()}}">
-<meta property="og:type"          content="article">
+<meta property="og:type"          content="website">
 <meta property="og:title"         content="{{ $title }} - {{config('app.name')}}">
 <meta property="og:description"   content="{{ $description }}">
 <meta property="og:image"         content="{{ asset($image) }}">
