@@ -116,4 +116,5 @@
   chmod
   update_symlinks
   update_img_cat
+  del_old_releases
 @endmacro
