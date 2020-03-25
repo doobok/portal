@@ -1,12 +1,6 @@
 {{-- FB share script --}}
-    <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=698531037619095';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v6.0&appId=698531037619095&autoLogAppEvents=1"></script>
 
   {{-- Tweetter share script --}}
   <script>window.twttr = (function(d, s, id) {
@@ -33,7 +27,7 @@
 
     <div class="uk-flex uk-flex-middle">
 
-        <div class="fb-like" data-href="{{url()->current()}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+        <div class="fb-share-button" data-href="{{url()->current()}}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffuture-bucha.club%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поділитись</a></div>
 
         <span class="uk-margin-left">
             <a class="twitter-share-button" rel="nofollow"
