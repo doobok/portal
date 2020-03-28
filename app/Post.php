@@ -56,16 +56,16 @@ class Post extends Model
           }
 
           // Отправка в соцсети
-          // if ($instance->status == 'PUBLISHED')
-          // {
-          //     // отправляем публикацию в соцсети
-          //     if ($instance->posted_social < 1){
-          //
-          //       $instance->posted_social = 1;
-          //       \Event::fire(new SocialPublishEvent($instance));
-          //     }
-          //
-          //   };
+          if ($instance->status == 'PUBLISHED')
+          {
+              // отправляем публикацию в соцсети
+              if ($instance->posted_social < 1){
+
+                $instance->posted_social = 1;
+                \Event::fire(new SocialPublishEvent($instance));
+              }
+
+            };
       });
 
       // Обновляем  поиск при изменении

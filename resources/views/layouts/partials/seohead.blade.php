@@ -1,12 +1,12 @@
 <head>
    {{-- Global site tag (gtag.js) - Google Analytics --}}
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30077483-14"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{setting('service.ganalytics')}}"></script>
    <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
 
-     gtag('config', 'UA-30077483-14');
+     gtag('config', '{{setting('service.ganalytics')}}');
    </script>
 
   <meta charset="utf-8">
