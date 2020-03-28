@@ -18,6 +18,8 @@
   <section class="nav-bg bg-green">
   </section>
 
+{{-- Slider --}}
+@if(sizeof($articles) > 0)
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true;">
 
     <ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
@@ -40,7 +42,9 @@
     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
 
-</div>
+  </div>
+@endif
+
 
 @component('components.breadcrumbs')
   @slot('title_1') @lang('site.initiatives') @endslot
