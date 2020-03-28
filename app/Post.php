@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Search;
+use App\Events\SocialPublishEvent;
 
 
 class Post extends Model
@@ -62,7 +63,7 @@ class Post extends Model
               if ($instance->posted_social < 1){
 
                 $instance->posted_social = 1;
-                \Event::fire(new SocialPublishEvent($instance));
+                event(new SocialPublishEvent($instance));
               }
 
             };
