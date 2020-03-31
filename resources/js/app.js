@@ -10,6 +10,17 @@ import store from './store/index';
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
 
+// Text editor
+import wysiwyg from "vue-wysiwyg";
+Vue.use(wysiwyg, {
+  hideModules: {  "headings": true,
+                  "separator": true,
+                  "code": true,
+                  "image": true,
+                  "table": true
+ },
+});
+
 // Components
 Vue.component('menu-main', require('./components/MenuMain.vue').default);
 Vue.component('menu-sidebar', require('./components/MenuSidebar.vue').default);

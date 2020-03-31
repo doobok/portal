@@ -51,7 +51,7 @@
           <div class="uk-margin">
               <label class="uk-text-muted">Повний опис</label>
               <div class="uk-form-controls">
-                  <textarea v-model="body" class="uk-textarea" rows="7" @blur="$v.body.$touch()"></textarea>
+                  <wysiwyg v-model="body" class="uk-textarea" placeholder="Детально опишіть ініціативу" @blur="$v.body.$touch()" />
                   <div class="uk-alert uk-alert-danger" v-if="$v.body.$error">
                       Поле обовʼязкове для заповнення
                    </div>
