@@ -37,7 +37,15 @@
           <span class="uk-h1 uk-text-danger uk-margin-right zoomIn"><i class="fas fa-gem"></i></span>
 
           <div class="uk-tile-muted uk-padding">
-            <h1 class="uk-heading-line uk-text-center"><span>{{$page->name}}</span></h1>
+            <h1 class="uk-heading-line uk-text-center">
+              <span>
+                @if ($page->first_name != null)
+                  {{$page->first_name}} {{$page->last_name}} 
+                @else
+                  {{$page->name}}
+                @endif
+              </span>
+            </h1>
             <p class="subtitle-text">
               {{$page->salute}}
             </p>

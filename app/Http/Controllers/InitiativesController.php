@@ -13,7 +13,7 @@ class InitiativesController extends Controller
 {
     public function index(Request $request)
     {
-      $articles = Initiative::where('status', 'new')->take(6)->get();
+      $articles = Initiative::where('status', 'premium_status')->take(6)->get();
       return view('desktop.initiatives.index', [
         'articles' => $articles,
       ]);

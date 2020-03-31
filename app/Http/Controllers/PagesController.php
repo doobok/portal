@@ -27,7 +27,7 @@ class PagesController extends Controller
     // user public page
     public function publicUsProfile($id)
     {
-      $article = User::where('name', $id)->select('id', 'name', 'avatar', 'created_at', 'salute')->first();
+      $article = User::where('name', $id)->select('id', 'name', 'avatar', 'created_at', 'salute', 'first_name', 'last_name')->first();
       if (!$article) {
         return back();
       }

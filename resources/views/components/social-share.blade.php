@@ -35,6 +35,7 @@
 
         <div class="fb-share-button"
           data-href="{{url()->current()}}"
+          data-size="large"
           data-layout="button_count">
         </div>
 
