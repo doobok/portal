@@ -1,8 +1,5 @@
 <template>
   <div>
-    <button class="uk-button uk-button-small uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-msg-send">
-      <i class="fas fa-paper-plane uk-margin-small-right"></i> Надіслати повідомлення
-    </button>
 
     <div id="modal-msg-send" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
@@ -62,6 +59,7 @@ export default{
           })
           .catch(err => {
             let e = { ...err    }
+            console.log(e);
             alert('Помилка відправки, спробуйте повторити спробу через деякий час.');
           });
     },

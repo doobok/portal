@@ -40,7 +40,7 @@
             <h1 class="uk-heading-line uk-text-center">
               <span>
                 @if ($page->first_name != null)
-                  {{$page->first_name}} {{$page->last_name}} 
+                  {{$page->first_name}} {{$page->last_name}}
                 @else
                   {{$page->name}}
                 @endif
@@ -49,10 +49,23 @@
             <p class="subtitle-text">
               {{$page->salute}}
             </p>
-            <div class="uk-text-center uk-margin-medium-top">
-              <button class="uk-button uk-button-primary uk-button-large">Надіслати повідомлення</button>
 
-            </div>
+              @auth
+                @if (auth()->id() != $page->id)
+
+                <div class="uk-text-center uk-margin-medium-top">
+
+                  <button class="uk-button uk-button-large uk-button-primary uk-margin-small-right" type="button" uk-toggle="target: #modal-msg-send">
+                    <i class="fas fa-paper-plane uk-margin-small-right"></i> Надіслати повідомлення
+                  </button>
+
+                  <msg-send :to="{{$page->id}}"></msg-send>
+
+                </div>
+
+                @endif
+              @endauth
+
           </div>
 
       </div>

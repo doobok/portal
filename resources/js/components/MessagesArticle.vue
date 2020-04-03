@@ -2,33 +2,35 @@
   <div>
 
     <div v-for="item in messages">
-      <div class="uk-card uk-card-default uk-card-small uk-margin-small-bottom"
-        v-bind:class="{ 'uk-card-primary': !item.read }">
+      <a v-bind:href="'/user/messages/' + item.id" class="uk-link-reset">
+        <div class="uk-card uk-card-default uk-card-small uk-margin-small-bottom uk-border-rounded"
+          v-bind:class="{ 'uk-alert-success uk-light': !item.read }">
 
-        <div class="uk-card-header">
-          <div class="uk-grid-small uk-flex-middle" data-uk-grid>
-            <div class="uk-width-auto uk-h2">
-              <i class="fas fa-user-tie"></i>
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" data-uk-grid>
+              <div class="uk-width-auto uk-h2">
+                <template v-if="item.from">
+                  <i class="fas fa-user-tie"></i>
+                </template>
+                <template v-else>
+                  <i class="fas fa-info-circle"></i>
+                </template>
+              </div>
+              <div class="uk-width-expand">
+                <h4 class="uk-margin-remove-bottom uk-text-bold">
+                  {{item.subject}}
+                </h4>
+                <p class="uk-text-meta uk-margin-remove-top uk-text-small">
+                  {{item.created_at}}
+                </p>
+              </div>
             </div>
-            <div class="uk-width-expand">
-              <h4 class="uk-margin-remove-bottom uk-text-bold">Username <i class="fas fa-external-link-alt uk-text-meta"></i></h4>
-              <p class="uk-text-meta uk-margin-remove-top uk-text-small">
-                {{item.created_at}}
-              </p>
-            </div>
+          </div>
+          <div class="uk-card-body">
+            <p>{{item.message}}</p>
           </div>
         </div>
-        <div class="uk-card-body" uk-grid>
-          <div class="uk-width-expand@m">
-            <!-- <h5 class="uk-margin-small-bottom uk-text-bold">lor</h5> -->
-            <p class="uk-text-small">{{item.message}}</p>
-          </div>
-          <div class="uk-width-auto@m uk-h2 uk-text-muted">
-            <i class="fas fa-reply uk-margin-right"></i>
-            <i class="fas fa-trash-alt uk-float-right"></i>
-          </div>
-        </div>
-      </div>
+      </a>
     </div>
 
     <div v-if="loading" class="uk-margin-large-top">
@@ -50,6 +52,17 @@ export default{
   },
   mounted: function () {
     this.loadData();
+    document.addEventListener('scroll', e => {
+                var scrollHeight = Math.max(
+                      document.body.scrollHeight, document.documentElement.scrollHeight,
+                      document.body.offsetHeight, document.documentElement.offsetHeight,
+                      document.body.clientHeight, document.documentElement.clientHeight
+                  )-400;
+
+                if(document.documentElement.scrollTop + document.documentElement.clientHeight >= scrollHeight && !this.loading && !this.lastdata) {
+                    this.loadData();
+                }
+            });
 
   },
   methods: {

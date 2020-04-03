@@ -53,6 +53,7 @@ Route::group(['prefix' => 'serv-data'], function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/messages', 'HomeController@messages')->name('messages');
+Route::get('/user/messages/{id}', 'HomeController@messageChat')->name('chat');
 Route::get('/user/backet', 'HomeController@backet')->name('backet');
 Route::get('/user/edit', 'HomeController@editProfile')->name('useredit');
 Route::get('/user/{id}', 'PagesController@publicUsProfile')->name('user');

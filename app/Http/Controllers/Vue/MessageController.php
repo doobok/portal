@@ -12,9 +12,24 @@ class MessageController extends Controller
   // add form
   public function sendMsg(Request $request)
   {
-    // save to DB
+    // Get user
+    $user = Auth::user();
+
+    // Check user
+    if ($user->id === $request->to) {
+      return response()->json(null, 423);
+    }
+
+    // Save to DB
     $message = new Message;
-    $message->from = Auth::id();
+
+    if ($request->subject) {
+      $message->subject = $request->subject;
+    } else {
+      $message->subject = 'Приватне повідомлення від ' . $user->name;
+      $message->from = $user->id;
+    }
+
     $message->to = $request->to;
     $message->message = $request->message;
     $message->save();

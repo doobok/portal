@@ -43,7 +43,7 @@ return [
     'no-days-off' => 'без перерви, без вихідних',
     //Titles
     'user-profile' => 'Профіль користувача',
-    'you-messages' => 'Ваші сповіщення',
+    'you-messages' => 'Вхідні повідомлення',
     'initiatives' => 'Ініціативи',
     'events' => 'Івенти',
     'courses' => 'Навчальні курси',

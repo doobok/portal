@@ -134,8 +134,15 @@
             </div>
             <div>
 
+              {{-- Send message to author --}}
               @auth
+
+                <button class="uk-button uk-button-small uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-msg-send">
+                  <i class="fas fa-paper-plane uk-margin-small-right"></i> Надіслати повідомлення
+                </button>
+
                 <msg-send :to="{{$author->id}}"></msg-send>
+
               @endauth
 
             </div>
