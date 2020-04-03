@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SocialPublishEvent' => [
         'App\Listeners\SocialPublishActionsListener',
         ],
+        'App\Events\SendNotificationEvent' => [
+        'App\Listeners\SendNotificationListener',
+        ],
     ];
 
     /**
