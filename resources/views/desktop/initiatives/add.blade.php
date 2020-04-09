@@ -18,10 +18,11 @@
   <section class="nav-bg bg-green">
   </section>
 
-  @component('components.breadcrumbs')
-    @slot('title_1') @lang('site.initiatives') @endslot
-    @slot('route_1') {{route('initiatives')}} @endslot
-    @slot('title_2') @lang('site.add-initiative') @endslot
+  @component('components.breadcrumbs', [
+      'crumbs' => [
+        [route('initiatives'), __('site.initiatives')],
+        ['', __('site.add-initiative')],
+      ]])
   @endcomponent
 
   <div class="uk-section uk-padding-remove-top uk-margin-medium-top">

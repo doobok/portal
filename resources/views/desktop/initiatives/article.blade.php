@@ -49,10 +49,11 @@
   </div>
 </div>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.initiatives') @endslot
-  @slot('route_1') {{route('initiatives')}} @endslot
-  @slot('title_2') {{$page->title}} @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      [route('initiatives'), __('site.initiatives')],
+      ['', $page->title],
+    ]])
 @endcomponent
 
 <section class="uk-section-small">

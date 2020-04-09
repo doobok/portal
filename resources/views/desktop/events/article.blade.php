@@ -49,10 +49,11 @@
   </div>
 </div>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.events') @endslot
-  @slot('route_1') {{route('events')}} @endslot
-  @slot('title_2') {{$page->title}} @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      [route('events'), __('site.events')],
+      ['', $page->title],
+    ]])
 @endcomponent
 
 <section class="uk-section-small">
@@ -74,7 +75,7 @@
       'model_id' => $page->id,
     ])
     @slot('title')Участь в заході: «{{$page->title}}»@endslot
-  @endcomponent      
+  @endcomponent
 
     </div>
 

@@ -108,3 +108,20 @@ $alert-danger-color: #fff;
 	margin: 0 auto;
 	filter:  grayscale(0);
 }
+
+// BreadCrumbs styles
+.bcrumb {
+  display: flex;
+  overflow-x: auto;
+}
+.bcrumb::-webkit-scrollbar {
+  display: none;
+}
+.bcrumb--content {
+  margin: 0 50px 0 -25px;
+  white-space: nowrap;
+  list-style-type: none;
+}
+.bcrumb-icon {
+  margin: 0 20px 0 0;
+}

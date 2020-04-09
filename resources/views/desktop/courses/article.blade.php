@@ -35,10 +35,11 @@
   </div>
 </div>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.courses') @endslot
-  @slot('route_1') {{route('courses')}} @endslot
-  @slot('title_2') {{$page->title}} @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      [route('courses'), __('site.courses')],
+      ['', $page->title],
+    ]])
 @endcomponent
 
 <section class="uk-section-small">

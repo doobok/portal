@@ -47,10 +47,11 @@
   </div>
 </div>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.news') @endslot
-  @slot('route_1') {{route('news')}} @endslot
-  @slot('title_2') {{$page->title}} @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      [route('news'), __('site.news')],
+      ['', $page->title],
+    ]])
 @endcomponent
 
 <section class="uk-section">

@@ -16,9 +16,10 @@
 <section class="nav-bg bg-red">
 </section>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.user-profile') @endslot
-  @slot('route_1') @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      ['', __('site.user-profile')],
+    ]])
 @endcomponent
 
 <div class="uk-section uk-padding-remove-top uk-margin-medium-top">

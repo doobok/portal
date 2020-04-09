@@ -16,9 +16,12 @@
 <section class="nav-bg bg-red">
 </section>
 
-@component('components.breadcrumbs')
-  @slot('title_1') @lang('site.you-messages') @endslot
-  @slot('route_1') {{route('messages')}} @endslot
+@component('components.breadcrumbs', [
+    'crumbs' => [
+      [route('home'), __('site.user-profile')],
+      [route('messages'), __('site.you-messages')],
+      ['', $message->subject],
+    ]])
 @endcomponent
 
 <div class="uk-section uk-padding-remove-top uk-margin-medium-top">
