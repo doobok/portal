@@ -60,7 +60,7 @@
 
   <div class="uk-text-center uk-padding uk-padding-remove-horizontal">
     <span class="uk-text-small uk-text-muted">© 2019 @if (date('Y') != '2019')- {{date('Y')}}  @endif {{config('app.name')}}, усі права захищені -
-      <a href="/policy" title="Політика конфіденційності">оферта</a>
+      <a href="/policy" title="Політика конфіденційності">політика</a>
        {{-- | Developer - <a href="#" title="Brain" target="_blank" data-uk-tooltip> <i class="fas fa-brain"></i> </a> --}}
     </span>
   </div>

@@ -27,8 +27,10 @@
 
         <h1 class="uk-heading-divider"><a class="uk-link-reset" href="">{{$page->title}}</a></h1>
 
-        <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url({{Voyager::image($page->image)}});">
-        </div>
+        @isset($page->image)
+          <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url({{Voyager::image($page->image)}});">
+          </div>
+        @endisset        
 
         {!! $page->body !!}
 
