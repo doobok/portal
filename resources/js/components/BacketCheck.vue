@@ -1,5 +1,7 @@
 <template>
-  <i v-if="backet" class="fas fa-shopping-cart uk-margin-small-left bounceInLeft"></i>
+  <a class="uk-link-reset" href="/user/backet">
+    <i v-if="backet" class="fas fa-shopping-cart uk-margin-small-left bounceInLeft"></i>
+  </a>
 </template>
 
 <script>

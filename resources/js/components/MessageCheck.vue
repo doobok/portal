@@ -1,5 +1,7 @@
 <template>
-  <i v-if="info" class="fas fa-bell uk-margin-small-left swing"></i>
+  <a class="uk-link-reset" href="/user/messages">
+    <i v-if="info" class="fas fa-bell uk-margin-small-left swing"></i>
+  </a>
 </template>
 
 <script>

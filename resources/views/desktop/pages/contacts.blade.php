@@ -43,6 +43,9 @@
                   @if (setting('contacts.fb'))
                     <a href="https://www.facebook.com/{{setting('contacts.fb')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-facebook-f"></i></a>
                   @endif
+                  @if (setting('contacts.telegram_canal'))
+                    <a href="https://t.me/{{setting('contacts.telegram_canal')}}" class="uk-icon-button uk-link-reset" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                  @endif
                   @if (setting('contacts.twitter'))
                     <a href="https://twitter.com/{{setting('contacts.twitter')}}" class="uk-icon-button uk-link-reset"><i class="fab fa-twitter"></i></a>
                   @endif
