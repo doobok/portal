@@ -30,7 +30,7 @@
 
           <h1 class="uk-heading-divider">@lang('site.events') <i class="fas fa-bullhorn uk-text-muted"></i></h1>
 
-          <p class="uk-heading-bullet  uk-text-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="uk-heading-bullet uk-text-italic">Для місцевих підприємціворганізовуємо онлайн та офлайн події. Завжди корисно та весело проводимо час. Запрошуємо гостей, влаштовуємо зустрічі, семінари, інтерв'ю та вечірки. У нас завжди атмосферно і затишно.</p>
 
           @foreach ($articles as $article)
             <div class="uk-box-shadow-bottom uk-margin-large-bottom">
