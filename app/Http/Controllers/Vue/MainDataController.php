@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Tag;
 use App\Initiative;
+use App\Course;
+use App\Ctag;
 
 class MainDataController extends Controller
 {
@@ -21,11 +23,27 @@ class MainDataController extends Controller
 
     }
 
-    public function tags()
+    public function tags(Request $request)
     {
-      $tags = Tag::all();
+      if ($request->segment === 'news') {
+        $tags = Tag::all();
+      } elseif ($request->segment === 'courses') {
+        $tags = Ctag::all();
+      } else {
+        return null;
+      }
+      $arr = collect();
+      foreach ($tags as $tag) {
+        $chunk = $tag->posts;
+        $count = count($chunk);
+        if ($count > 0) {
+          $tag->setAttribute('count', $count);
+          $tag = $tag->only(['count', 'id', 'title', 'slug']);
+          $arr->push($tag);
+        }
+      }
 
-      return $tags;
+      return $arr;
     }
 
     // get News with filter
@@ -51,6 +69,32 @@ class MainDataController extends Controller
       }
 
       return $news;
+
+    }
+
+    // get Courses with filter
+    public function courses(Request $request)
+    {
+
+      if ($request->tag != null) {
+        $tag = Ctag::where('slug', $request->tag)->first();
+        if ($tag != null) {
+          $courses = $tag->posts()->where('status', 'PUBLISHED')
+          ->orderBy('id', 'desc')
+          ->skip($request->skip)
+          ->take(4)->get();
+        } else {
+          $courses = null;
+        }
+
+      } else {
+        $courses = Course::where('status', 'PUBLISHED')
+        ->orderBy('id', 'desc')
+        ->skip($request->skip)
+        ->take(4)->get();
+      }
+
+      return $courses;
 
     }
 

@@ -27,31 +27,33 @@
           @endif
         </div>
       </div>
-      <div class="uk-width-1-6@m">
-        <h5>Проекти</h5>
+      <div class="uk-width-1-6@m uk-visible@m">
+        <h5>Наші проекти</h5>
         <ul class="uk-list">
-          <li>Перший елемент</li>
-          <li>Другий елемент</li>
-          <li>Третій елемент</li>
-          <li>Четвертий елемент</li>
+          <li>
+            <a class="uk-link-reset" href="/events">Івенти</a>
+          </li>
+          <li>
+            <a class="uk-link-reset" href="/initiatives">Ініціативи</a>
+          </li>
         </ul>
       </div>
-      <div class="uk-width-1-6@m">
-        <h5>Діячі</h5>
+      <div class="uk-width-1-6@m uk-visible@m">
+        <h5>Навчальні курси</h5>
         <ul class="uk-list">
-          <li>Перший елемент</li>
-          <li>Другий елемент</li>
-          <li>Третій елемент</li>
-          <li>Четвертий елемент</li>
+          <li>
+            <a class="uk-link-reset" href="/courses">Менеджмент</a>
+          </li>
+          <li>
+            <a class="uk-link-reset" href="/courses">Маркетинг</a>
+          </li>
         </ul>
       </div>
-      <div class="uk-width-1-6@m">
-        <h5>Активісти</h5>
+      <div class="uk-width-1-6@m uk-visible@m">
+        <h5>List</h5>
         <ul class="uk-list">
-          <li>Перший елемент</li>
-          <li>Другий елемент</li>
-          <li>Третій елемент</li>
-          <li>Четвертий елемент</li>
+          <li>List item</li>
+          <li>List item</li>
         </ul>
       </div>
 

@@ -24,6 +24,7 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::get('menu', 'Vue\MainDataController@menu');
   Route::get('tags', 'Vue\MainDataController@tags');
   Route::get('news', 'Vue\MainDataController@news');
+  Route::get('courses', 'Vue\MainDataController@courses');
   Route::get('now-time', 'Vue\MainDataController@now');
   // initiatives
   Route::get('initiatives', 'Vue\MainDataController@initiatives');

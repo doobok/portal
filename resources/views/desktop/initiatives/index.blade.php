@@ -58,7 +58,9 @@
 
           <h1 class="uk-heading-divider">@lang('site.initiatives') <i class="fas fa-users uk-text-muted"></i></h1>
           <h4 class="uk-margin-remove">Є свіжі ідеї? Запропонуй <a href="{{route('initiative-add')}}">власну ініціативу!</a> </h4>
-          <p class="uk-heading-bullet uk-text-italic">Поодинці ми маємо сумніви, часом втрачаємо сили і впевненість. А разом - можемо досягти більшого. Гуртуємося, формуємо коло однодумців, спільно долаємо виклики, виводимо бізнес на новий рівень.</p>
+          @if(null !== setting('text.teaser_initiatives_page'))
+            <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_initiatives_page')}}</p>
+          @endif
 
           <div class="uk-margin-large">
 

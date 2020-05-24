@@ -29,10 +29,11 @@
     <div class="uk-container">
 
           <h1 class="uk-heading-divider">@lang('site.events') <i class="fas fa-bullhorn uk-text-muted"></i></h1>
+          @if(null !== setting('text.teaser_events_page'))
+            <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_events_page')}}</p>
+          @endif
 
-          <p class="uk-heading-bullet uk-text-italic">Для місцевих підприємців організовуємо онлайн та офлайн події. Завжди корисно та весело проводимо час. Запрошуємо гостей, влаштовуємо зустрічі, семінари, інтерв'ю та вечірки. У нас завжди атмосферно і затишно.</p>
-
-          @foreach ($articles as $article)
+          @forelse ($articles as $article)
             <div class="uk-box-shadow-bottom uk-margin-large-bottom">
             <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-box-shadow-medium">
                 <div class="uk-cover-container">
@@ -53,7 +54,13 @@
                 </div>
               </div>
             </div>
-          @endforeach
+          @empty
+            <div class="uk-margin-large-top uk-text-center uk-text-muted">
+              <span><img src="/sad.png" alt="sad-smile" width="120"></span>
+              <p><span class="uk-heading-small uk-text-muted">Не знайдено жодного актуального івенту</span></p>
+              <p class="uk-text-large">Нажаль, наразі немає доступних івентів. Спробуйте зайти пізніше, а ще краще - підпишіться на нас в соціальних мережах, щоб не пропустити жодного цікавого заходу ;)</p>
+            </div>
+          @endforelse
 
 
 

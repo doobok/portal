@@ -30,7 +30,9 @@
 
 
           <h1 class="uk-heading-divider">@lang('site.news') <i class="far fa-newspaper uk-text-muted"></i></h1>
-          <p class="uk-heading-bullet uk-text-italic">Наш успіх в об'єднанні. Ділимося досвідом, знайомимося, підтримуємо зв'язки. Найцікавіший досвід та історії розповідаємо тут. Збираємо актуальну інформацію про місцевий бізнес, нові тренди в Україні та світі.</p>
+          @if(null !== setting('text.teaser_news_page'))
+            <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_news_page')}}</p>
+          @endif
 
 
 

@@ -97,6 +97,7 @@ export default{
                                   this.lastdata = true;
                                 }
                             } else {
+                              this.loadData();
                               if (this.oldperiod) {
                                 this.lastdata = true;
                               } else {
