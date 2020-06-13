@@ -42,20 +42,20 @@
         <h5>Навчальні курси</h5>
         <ul class="uk-list">
           <li>
-            <a class="uk-link-reset" href="/courses">Менеджмент</a>
+            <a class="uk-link-reset" href="/courses?tag=management">Менеджмент</a>
           </li>
           <li>
-            <a class="uk-link-reset" href="/courses">Маркетинг</a>
+            <a class="uk-link-reset" href="/courses?tag=marketing">Маркетинг</a>
           </li>
         </ul>
       </div>
-      <div class="uk-width-1-6@m uk-visible@m">
+      {{-- <div class="uk-width-1-6@m uk-visible@m">
         <h5>List</h5>
         <ul class="uk-list">
           <li>List item</li>
           <li>List item</li>
         </ul>
-      </div>
+      </div> --}}
 
     </div>
   </div>
