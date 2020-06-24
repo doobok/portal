@@ -3,7 +3,7 @@
 @section('head')
   @component('components.meta')
 
-    @slot('title') @lang('site.add-initiative') @endslot
+    @slot('title') @lang('site.add-expert') @endslot
     @slot('description') @endslot
     @slot('image') @endslot
     @slot('date') @endslot
@@ -14,13 +14,13 @@
 
 @section('content')
 
-  <section class="nav-bg bg-green">
+  <section class="nav-bg bg-blue">
   </section>
 
   @component('components.breadcrumbs', [
       'crumbs' => [
-        [route('initiatives'), __('site.initiatives')],
-        ['', __('site.add-initiative')],
+        [route('experts'), __('site.consalting')],
+        ['', __('site.add-expert')],
       ]])
   @endcomponent
 
@@ -30,12 +30,12 @@
 
       @include('layouts.partials.auth-info')
 
-          <h1 class="uk-heading-divider">@lang('site.add-initiative') <i class="fas fa-users uk-text-muted"></i></h1>
-          @if(null !== setting('text.teaser_initiatives_add_page'))
-          <p class="uk-heading-bullet uk-text-italic">{{setting('text.teaser_initiatives_add_page')}}</p>
+          <h1 class="uk-heading-divider">@lang('site.add-expert') <i class="fas fa-user-tie uk-text-muted"></i></h1>
+          @if(null !== setting('text.teaser_experts_add_page'))
+          <p class="uk-heading-bullet uk-text-italic">{{setting('text.teaser_experts_add_page')}}</p>
           @endif
 
-          <initiative-add user="{{auth()->user()}}"></initiative-add>
+          <experts-add user="{{auth()->user()}}"></experts-add>
 
     </div>
 

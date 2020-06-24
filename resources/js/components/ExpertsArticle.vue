@@ -3,7 +3,7 @@
 
     <div v-for="item in experts" class="uk-card uk-card-default uk-grid-collapse uk-margin" :key="item.id" uk-grid>
         <div class="uk-width-1-2@m uk-width-1-3@l uk-cover-container uk-card-media-right">
-          <img :src="'/storage/' + item.photo" uk-cover>
+          <img :src="'/storage/' + item.image" uk-cover>
           <div class="uk-position-cover uk-flex uk-flex-bottom">
             <span class="uk-heading-small uk-margin-remove uk-tile-secondary uk-text-center uk-width-1-1" style="opacity: 0.7">
               <!-- send msg -->

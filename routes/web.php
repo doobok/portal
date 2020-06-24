@@ -46,6 +46,7 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::post('user-update/{id}', 'UsersController@userUpdate');
   // experts
   Route::get('experts', 'ExpertsController@experts');
+  Route::post('expert-add', 'ExpertsController@addForm');
   // search
   Route::get('search', function (Request $request) {
     return App\Search::search($request->keywords)->get();
@@ -77,5 +78,6 @@ Route::get('/events/{id}', 'EventsController@article')->name('event');
 Route::get('/courses', 'CoursesController@index')->name('courses');
 Route::get('/courses/{id}', 'CoursesController@article')->name('course');
 Route::get('/experts', 'ExpertsController@index')->name('experts');
+Route::get('/experts/add', 'ExpertsController@add')->name('expert-add');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/{slug}', 'PagesController@index')->name('page');

@@ -7,7 +7,7 @@
         <p class="subtitle-text">
           Ми формуємо команду спеціалістів, здатну вирішувати різноманітні завдання, які ставить сучасність перед підприємцями. Якшо ти вже маєш певне портфоліо із успішних кейсів, якщо твоя робота допомогла людям, якщо ти бажаєш розвиватися і далі - залишай заявку і в тебе буде можливість долучитися до потужного ком'юніті однодумців.
         </p>
-        <a href="#" class="uk-button uk-button-primary uk-border-pill" data-uk-icon="arrow-right">Стати експертом...</a>
+        <a href="{{route('expert-add')}}" class="uk-button uk-button-primary uk-border-pill" data-uk-icon="arrow-right">Стати експертом...</a>
       </div>
       <div data-uk-scrollspy="cls: uk-animation-fade">
         <img data-src="/expert.webp" data-uk-img alt="expert">

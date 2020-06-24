@@ -51,6 +51,7 @@ return [
     'backet' => 'Кошик',
     'profile-edit' => 'Редагування профілю',
     'consalting' => 'Консалтинг',
+    'add-expert' => 'Стань нашим експертом!',
     // Date Time
     'days' => 'дні',
     'hours' => 'години',
