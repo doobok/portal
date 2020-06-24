@@ -2,16 +2,15 @@
   <div class="uk-container">
     <div class="uk-grid uk-child-width-1-2@l uk-flex-middle">
       <div>
-        <h6>PORTAL - BUCHA</h6>
-        <h2 class="uk-margin-small-top uk-h1">Заголовок, заклик до дії ...</h2>
+        <h6>FUTURE - BUCHA</h6>
+        <h2 class="uk-margin-small-top uk-h1">Стань нашим експертом</h2>
         <p class="subtitle-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Ми формуємо команду спеціалістів, здатну вирішувати різноманітні завдання, які ставить сучасність перед підприємцями. Якшо ти вже маєш певне портфоліо із успішних кейсів, якщо твоя робота допомогла людям, якщо ти бажаєш розвиватися і далі - залишай заявку і в тебе буде можливість долучитися до потужного ком'юніті однодумців.
         </p>
-        <a href="#" class="uk-button uk-button-primary uk-border-pill" data-uk-icon="arrow-right">Читати далі</a>
+        <a href="#" class="uk-button uk-button-primary uk-border-pill" data-uk-icon="arrow-right">Стати експертом...</a>
       </div>
       <div data-uk-scrollspy="cls: uk-animation-fade">
-        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/dum.jpg" data-uk-img alt="Image">
+        <img data-src="/expert.webp" data-uk-img alt="expert">
       </div>
     </div>
   </div>

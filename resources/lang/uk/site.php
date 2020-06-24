@@ -50,6 +50,7 @@ return [
     'add-initiative' => 'Запропонувати ініціативу',
     'backet' => 'Кошик',
     'profile-edit' => 'Редагування профілю',
+    'consalting' => 'Консалтинг',
     // Date Time
     'days' => 'дні',
     'hours' => 'години',
