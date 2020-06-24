@@ -28,7 +28,7 @@
                 <div class="uk-flex uk-flex-center uk-grid-small" uk-grid>
                   <div>
                     <span>
-                      <a class="uk-button uk-button-primary" href="/news">
+                      <a class="uk-button uk-button-primary" :href="'/news?u=' + item.id">
                         <i class="far fa-newspaper"></i>
                         Мої публікації
                       </a>
@@ -36,7 +36,7 @@
                   </div>
                   <div>
                     <span>
-                      <a class="uk-button uk-button-primary" href="/courses">
+                      <a class="uk-button uk-button-primary" :href="'/courses?u=' + item.id">
                         <i class="fas fa-chalkboard-teacher"></i>
                         Мої курси
                       </a>
@@ -48,9 +48,6 @@
             </div>
         </div>
       </div>
-
-
-
 
 
     <div v-if="loading" class="uk-margin-large-top">

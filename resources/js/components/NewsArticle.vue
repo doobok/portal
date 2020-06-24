@@ -48,7 +48,7 @@
 
 <script>
 export default{
-  props:['tag'],
+  props:['tag', 'uid'],
   data(){
       return{
           news: [],
@@ -76,7 +76,7 @@ export default{
                 this.loading = true;
                 setTimeout(e => {
                     axios
-                        .get('/serv-data/news', { params: { tag: this.tag, skip: this.count } })
+                        .get('/serv-data/news', { params: { tag: this.tag, skip: this.count, uid: this.uid } })
                         .then(response => {
                             if (response.data.length != 0) {
                                 this.news = [].concat(this.news, response.data);

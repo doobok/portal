@@ -33,7 +33,7 @@
             <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_courses_page')}}</p>
           @endif
 
-          <courses-article tag="{{request('tag')}}"></courses-article>
+          <courses-article tag="{{request('tag')}}" uid="{{request('u')}}"></courses-article>
 
     </div>
 

@@ -36,7 +36,7 @@
 
 
 
-            <news-article tag="{{request('tag')}}"></news-article>
+            <news-article tag="{{request('tag')}}" uid="{{request('u')}}"></news-article>
 
 
 

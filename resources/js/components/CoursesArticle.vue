@@ -34,7 +34,7 @@
 
 <script>
 export default{
-  props:['tag'],
+  props:['tag', 'uid'],
   data(){
       return{
           courses: [],
@@ -62,7 +62,7 @@ export default{
                 this.loading = true;
                 setTimeout(e => {
                     axios
-                        .get('/serv-data/courses', { params: { tag: this.tag, skip: this.count } })
+                        .get('/serv-data/courses', { params: { tag: this.tag, skip: this.count, uid: this.uid } })
                         .then(response => {
                             if (response.data.length != 0) {
                                 this.courses = [].concat(this.courses, response.data);

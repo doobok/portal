@@ -49,10 +49,12 @@ class MainDataController extends Controller
     // get News with filter
     public function news(Request $request)
     {
-
+      // если есть значение тега
       if ($request->tag != null) {
+        // получаем тег
         $tag = Tag::where('slug', $request->tag)->first();
         if ($tag != null) {
+          // если не пустой то плучаем новости
           $news = $tag->posts()->where('status', 'PUBLISHED')
           ->orderBy('id', 'desc')
           ->skip($request->skip)
@@ -62,7 +64,14 @@ class MainDataController extends Controller
         }
 
       } else {
+        // получаем параметр для фильтрации
+        $params = [];
+        if ($request->uid) {
+          array_push($params, ['user_id', $request->uid]);
+        }
+        // получаем новости
         $news = Post::where('status', 'PUBLISHED')
+        ->where($params)
         ->orderBy('id', 'desc')
         ->skip($request->skip)
         ->take(4)->get();
@@ -76,8 +85,11 @@ class MainDataController extends Controller
     public function courses(Request $request)
     {
 
+      // если есть значение тега
       if ($request->tag != null) {
+        // получаем тег
         $tag = Ctag::where('slug', $request->tag)->first();
+        // если не пустой то плучаем курсы
         if ($tag != null) {
           $courses = $tag->posts()->where('status', 'PUBLISHED')
           ->orderBy('id', 'desc')
@@ -88,7 +100,14 @@ class MainDataController extends Controller
         }
 
       } else {
+        // получаем параметр для фильтрации
+        $params = [];
+        if ($request->uid) {
+          array_push($params, ['user_id', $request->uid]);
+        }
+        // плучаем курсы
         $courses = Course::where('status', 'PUBLISHED')
+        ->where($params)
         ->orderBy('id', 'desc')
         ->skip($request->skip)
         ->take(4)->get();
