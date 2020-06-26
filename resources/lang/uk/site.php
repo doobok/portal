@@ -52,6 +52,7 @@ return [
     'profile-edit' => 'Редагування профілю',
     'consalting' => 'Консалтинг',
     'add-expert' => 'Стань нашим експертом!',
+    'add-news' => 'Подача новини',
     // Date Time
     'days' => 'дні',
     'hours' => 'години',

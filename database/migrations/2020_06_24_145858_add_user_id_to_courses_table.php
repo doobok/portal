@@ -14,7 +14,7 @@ class AddUserIdToCoursesTable extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->nullable();
         });
     }
 

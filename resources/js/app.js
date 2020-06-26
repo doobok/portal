@@ -28,6 +28,7 @@ Vue.component('menu-sidebar-subs', require('./components/MenuSidebarSubs.vue').d
 Vue.component('menu-user-nav', require('./components/MenuUserNav.vue').default);
 Vue.component('news-tags', require('./components/NewsTags.vue').default);
 Vue.component('news-article', require('./components/NewsArticle.vue').default);
+Vue.component('news-add', require('./components/NewsAddForm.vue').default);
 Vue.component('courses-article', require('./components/CoursesArticle.vue').default);
 Vue.component('initiative-article', require('./components/InitiativesArticle.vue').default);
 Vue.component('initiative-article-subscribe', require('./components/InitiativesArticleSubscribe.vue').default);

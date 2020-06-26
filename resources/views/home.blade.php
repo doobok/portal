@@ -133,6 +133,17 @@
           </div>
         @endif
       </div>
+      <div class="uk-card-footer">
+        {{-- buttons --}}
+        @isset ($user->email_verified_at)
+          <p class="uk-text-meta">Доступні активності:</p>
+
+          <a class="uk-button uk-button-default" href="{{route('news-add')}}">Подати новину <i class="fas fa-bullhorn"></i></a>
+          <a class="uk-button uk-button-default" href="{{route('initiative-add')}}">Створити ініціативу <i class="fas fa-users"></i></a>
+
+        @endisset
+      </div>
+
   </div>
 
 </div>

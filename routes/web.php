@@ -23,9 +23,11 @@ Auth::routes(['verify' => true]);
 Route::group(['prefix' => 'serv-data'], function () {
   Route::get('menu', 'Vue\MainDataController@menu');
   Route::get('tags', 'Vue\MainDataController@tags');
-  Route::get('news', 'Vue\MainDataController@news');
   Route::get('courses', 'Vue\MainDataController@courses');
   Route::get('now-time', 'Vue\MainDataController@now');
+  // news
+  Route::get('news', 'Vue\MainDataController@news');
+  Route::post('news-add', 'NewsController@addForm');  
   // initiatives
   Route::get('initiatives', 'Vue\MainDataController@initiatives');
   Route::post('initiative-add', 'InitiativesController@addForm');
@@ -69,6 +71,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Main routes
 Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/add', 'NewsController@add')->middleware('auth')->name('news-add');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
 Route::get('/initiatives', 'InitiativesController@index')->name('initiatives');
 Route::get('/initiatives/add', 'InitiativesController@add')->name('initiative-add');
