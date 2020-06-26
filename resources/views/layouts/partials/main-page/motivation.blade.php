@@ -5,25 +5,25 @@
     <div class="uk-grid uk-flex-right">
 
       <div class="uk-width-2-5@m" data-uk-parallax="y: 50,-50; easing: 0; media:@l">
-        <h6>PORTAL</h6>
-        <div class="uk-position-relative uk-visible-toggle uk-light" data-uk-slider="easing: cubic-bezier(.16,.75,.47,1)">
+        <h6>FUTURE - BUCHA</h6>
+        <div class="uk-position-relative uk-visible-toggle uk-light" data-uk-slider="autoplay: true; easing: cubic-bezier(.16,.75,.47,1)">
           <ul class="uk-slider-items uk-child-width-1-1">
             <li>
               <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
-                <h2 class="uk-margin-small-top">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"</h2>
-                <p class="uk-text-meta">Lorena Smith, founder of Some Cool Startup</p>
+                <p class="uk-h2 uk-margin-small-top">"Я не терпів поразок. Я просто знайшов 10 000 способів, які не працюють."</p>
+                <p class="uk-text-meta">— Томас Едісон - винахідник і підприємець</p>
               </div>
             </li>
             <li>
               <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
-                <h2 class="uk-margin-small-top">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt "</h2>
-                <p class="uk-text-meta">Lorena Smith, founder of Some Cool Startup</p>
+                <p class="uk-h2 uk-margin-small-top">"Освіта допоможе вижити. Самоосвіта приведе вас до успіху."</p>
+                <p class="uk-text-meta">— Джим Рон - оратор, бізнес-тренер</p>
               </div>
             </li>
             <li>
               <div data-uk-slider-parallax="opacity: 0.2,1,0.2">
-                <h2 class="uk-margin-small-top">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt "</h2>
-                <p class="uk-text-meta">Lorena Smith, founder of Some Cool Startup</p>
+                <p class="uk-h2 uk-margin-small-top">"Зарплату платить не роботодавець - він тільки розпоряджається грошима. Зарплату платить клієнт."</p>
+                <p class="uk-text-meta">— Генрі Форд - промисловець</p>
               </div>
             </li>
           </ul>

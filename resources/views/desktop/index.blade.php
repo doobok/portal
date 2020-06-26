@@ -17,10 +17,10 @@
 @section('content')
 
   @include('layouts.partials.main-page.first-screan')
-  @include('layouts.partials.main-page.content')
-  @include('layouts.partials.main-page.todo')
+  {{-- @include('layouts.partials.main-page.content') --}}
+  @include('layouts.partials.main-page.get-expert')
   @include('layouts.partials.main-page.motivation')
-  @include('layouts.partials.main-page.cards')
-  @include('layouts.partials.main-page.logos')
+  {{-- @include('layouts.partials.main-page.cards') --}}
+  {{-- @include('layouts.partials.main-page.logos') --}}
 
 @endsection

@@ -33,9 +33,9 @@
         </div>
 
           <h6 class="uk-text-muted uk-float-right">На сайті із {{substr($page->created_at, 0, 10)}} </h6>
-          <span class="uk-h1 uk-text-primary uk-margin-right zoomIn"><i class="fas fa-award"></i></span>
-          <span class="uk-h1 uk-text-warning uk-margin-right zoomIn"><i class="fab fa-jedi-order"></i></span>
-          <span class="uk-h1 uk-text-danger uk-margin-right zoomIn"><i class="fas fa-gem"></i></span>
+
+          {{-- awards --}}
+          @include('layouts.partials.awards-public-profile')          
 
           <div class="uk-tile-muted uk-padding">
             <h1 class="uk-heading-line uk-text-center">
