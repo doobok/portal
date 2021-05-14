@@ -59,7 +59,7 @@
           <h1 class="uk-heading-divider">@lang('site.initiatives') <i class="fas fa-users uk-text-muted"></i></h1>
           <h4 class="uk-margin-remove">Є свіжі ідеї? Запропонуй <a href="{{route('initiative-add')}}">власну ініціативу!</a> </h4>
           @if(null !== setting('text.teaser_initiatives_page'))
-            <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_initiatives_page')}}</p>
+            <div class="uk-text-italic">{!!setting('text.teaser_initiatives_page')!!}</div> 
           @endif
 
           <div class="uk-margin-large">

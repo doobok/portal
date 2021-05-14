@@ -1,4 +1,4 @@
-<section class="uk-section uk-section-secondary uk-section-large">
+<section id="expert" class="uk-section uk-section-secondary uk-section-large">
   <div class="uk-container">
     <div class="uk-grid uk-child-width-1-2@l uk-flex-middle">
       <div>
@@ -10,7 +10,7 @@
         <a href="{{route('expert-add')}}" class="uk-button uk-button-primary uk-border-pill" data-uk-icon="arrow-right">Стати експертом...</a>
       </div>
       <div data-uk-scrollspy="cls: uk-animation-fade">
-        <img data-src="/expert.webp" data-uk-img alt="expert">
+        <img data-src="/expert.jpg" data-uk-img alt="expert">
       </div>
     </div>
   </div>

@@ -30,7 +30,7 @@
 
           <h1 class="uk-heading-divider">@lang('site.events') <i class="fas fa-bullhorn uk-text-muted"></i></h1>
           @if(null !== setting('text.teaser_events_page'))
-            <p class="uk-heading-bullet  uk-text-italic">{{setting('text.teaser_events_page')}}</p>
+            <div class="uk-text-italic">{!!setting('text.teaser_events_page')!!}</div>
           @endif
 
           @forelse ($articles as $article)

@@ -1,5 +1,5 @@
 <section class="uk-cover-container overlay-wrap">
-  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="main2.jpg" alt="" data-uk-cover data-uk-img
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="main-fb2.jpg" alt="" data-uk-cover data-uk-img
   >
   <div class="uk-container uk-position-z-index uk-position-relative uk-section uk-section-xlarge uk-light">
     <div class="uk-grid uk-flex-right">
