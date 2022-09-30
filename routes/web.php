@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::group(['prefix' => 'serv-data'], function () {
   Route::get('now-time', 'Vue\MainDataController@now');
   // news
   Route::get('news', 'Vue\MainDataController@news');
-  Route::post('news-add', 'NewsController@addForm');  
+  Route::post('news-add', 'NewsController@addForm');
   // initiatives
   Route::get('initiatives', 'Vue\MainDataController@initiatives');
   Route::post('initiative-add', 'InitiativesController@addForm');
